@@ -317,7 +317,7 @@ public class registrationform extends javax.swing.JFrame {
 
         dbconnector connector = new dbconnector();
 
-        if(connector.insertData("INSERT INTO tbl_u(u_fname, u_lname, u_email, u_uname, u_pass, u_type, u_status) VALUES ('"+u_fname.getText()+"','"+u_lname.getText()+"','"+ u_email.getText()+"','"+u_uname.getText()+"','"+ u_pass.getText()+"','"+ u_type.getSelectedItem()+"','Pending')")){
+        if(connector.insertData("INSERT INTO tbl_u(u_fname, u_lname, user_emel, user_name, user_pass, account_type, u_staus) VALUES ('"+u_fname.getText()+"','"+u_lname.getText()+"','"+ u_email.getText()+"','"+u_uname.getText()+"','"+ u_pass.getText()+"','"+ u_type.getSelectedItem()+"','Pending')")){
             JOptionPane.showMessageDialog(null, "Inserted Success!");
             loginform ads = new loginform();
             this.dispose();
