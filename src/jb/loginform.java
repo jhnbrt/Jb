@@ -48,7 +48,6 @@ public static boolean loginAcc(String username, String password){
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         u_uname = new javax.swing.JTextField();
@@ -59,68 +58,65 @@ public static boolean loginAcc(String username, String password){
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setMinimumSize(new java.awt.Dimension(500, 450));
         jPanel2.setPreferredSize(new java.awt.Dimension(600, 450));
-
-        jLabel11.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(72, 149, 239));
-        jLabel11.setText("ROMANOTECH");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(220, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addGap(120, 120, 120))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(181, 181, 181)
-                .addComponent(jLabel11)
-                .addContainerGap(194, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 500, 450);
+        jPanel2.setBounds(0, 0, 340, 450);
 
         jLabel1.setFont(new java.awt.Font("Microsoft Himalaya", 1, 48)); // NOI18N
-        jLabel1.setText("WELCOME BACK!");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("WELCOME!");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(609, 59, 310, 60);
+        jLabel1.setBounds(480, 60, 200, 60);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Username:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(665, 154, 70, 14);
+        jLabel2.setBounds(480, 140, 70, 14);
         jPanel1.add(u_uname);
-        u_uname.setBounds(665, 174, 208, 20);
+        u_uname.setBounds(480, 160, 220, 30);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Password:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(665, 205, 60, 14);
+        jLabel3.setBounds(480, 200, 60, 14);
+
+        u_pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                u_passActionPerformed(evt);
+            }
+        });
         jPanel1.add(u_pass);
-        u_pass.setBounds(665, 223, 208, 20);
+        u_pass.setBounds(480, 220, 220, 30);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setText("Log in");
@@ -131,33 +127,38 @@ public static boolean loginAcc(String username, String password){
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(720, 298, 90, 30);
+        jButton1.setBounds(540, 300, 90, 30);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 153, 255));
         jLabel5.setText("Forgot password?");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(773, 254, 100, 14);
+        jLabel5.setBounds(480, 260, 100, 14);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("__________");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(684, 339, 70, 14);
+        jLabel6.setBounds(500, 340, 70, 14);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("__________");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(783, 340, 70, 14);
+        jLabel7.setBounds(600, 340, 70, 14);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("or");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(760, 339, 13, 15);
+        jLabel8.setBounds(580, 340, 13, 15);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Don't have an account?");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(470, 360, 132, 14);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 153, 255));
@@ -167,29 +168,19 @@ public static boolean loginAcc(String username, String password){
                 jLabel4MouseClicked(evt);
             }
         });
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(610, 360, 70, 14);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addGap(0, 0, Short.MAX_VALUE))
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel9)
-                .addComponent(jLabel4))
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(665, 372, 208, 14);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1000, 450);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -213,6 +204,10 @@ public static boolean loginAcc(String username, String password){
         registrationform.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void u_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_u_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_u_passActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,7 +248,6 @@ public static boolean loginAcc(String username, String password){
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -264,7 +258,6 @@ public static boolean loginAcc(String username, String password){
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField u_pass;
     private javax.swing.JTextField u_uname;
     // End of variables declaration//GEN-END:variables
