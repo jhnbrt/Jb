@@ -152,7 +152,12 @@ public class registrationform extends javax.swing.JFrame {
 
         u_type.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         u_type.setForeground(new java.awt.Color(51, 51, 51));
-        u_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMIN", "USER", "" }));
+        u_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "User", " " }));
+        u_type.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                u_typeActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setText("Create");
@@ -386,6 +391,10 @@ public class registrationform extends javax.swing.JFrame {
         ads.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void u_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_u_typeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_u_typeActionPerformed
 
     /**
      * @param args the command line arguments
