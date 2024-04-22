@@ -8,10 +8,12 @@ package jb;
 
 import admin_dashboard.admin_dashboard;
 import config.dbconnector;
+import config.session;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import register.registrationform;
+import user_dashboard.user_dashboard;
 
 /**
  *
@@ -28,8 +30,7 @@ public class loginform extends javax.swing.JFrame {
     
     static String status;
     static String type;
-    static String fname;
-    static String lname;
+
     
     public static boolean loginAcc(String username, String password){
         dbconnector connector = new dbconnector();
@@ -41,8 +42,15 @@ public class loginform extends javax.swing.JFrame {
                 
                 status = resultSet.getString("u_staus");
                 type = resultSet.getString("account_type");
-                fname = resultSet.getString("u_fname");
-                lname = resultSet.getString("u_lname");
+                session sess = session.getInstance();
+                sess.setUid(resultSet.getInt("u_id")); 
+                sess.setFname(resultSet.getString("u_fname"));
+                sess.setLname(resultSet.getString("u_lname"));
+                sess.setEmail(resultSet.getString("user_emel"));
+                sess.setUsername(resultSet.getString("user_name"));
+                sess.setType(resultSet.getString("account_type"));
+                sess.setStatus(resultSet.getString("u_staus"));
+                
                  
                 return true;
             }else{
@@ -250,14 +258,31 @@ public class loginform extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         if(loginAcc(u_uname.getText(),u_pass.getText())){
-
-            JOptionPane.showMessageDialog(null,"Log in Success!");
-            admin_dashboard ads = new admin_dashboard();
-            ads.setVisible(true);
-            this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(null,"User not found!");
-        }
+            
+             if(!status.equals("Active")){ 
+                      JOptionPane.showMessageDialog(null, "In-Active Account, Contact the Admin!");
+                      loginform ads = new loginform();
+                      ads.setVisible(true);
+                      this.dispose();
+         }          
+            else{         
+                if(type.equals("Admin")){                 
+                      JOptionPane.showMessageDialog(null, "Log in successfully.");
+                      admin_dashboard ads = new admin_dashboard();
+                      ads.setVisible(true);
+                      this.dispose();                    
+                }else if(type.equals("User")){                  
+                      JOptionPane.showMessageDialog(null, "Log in successfully.");
+                      user_dashboard uds = new  user_dashboard();
+                      uds.setVisible(true);
+                      this.dispose();                     
+                 }else{
+                        JOptionPane.showMessageDialog(null, "Account does not exist.");
+                    }     
+               }            
+        }else{          
+            JOptionPane.showMessageDialog(null, "User does not exist!");
+        }  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
