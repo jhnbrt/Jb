@@ -387,6 +387,7 @@ public class registrationform extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(null, "Inserted Success!");
             loginform ads = new loginform();
+             ads.setVisible(true);
             this.dispose();
         }else{
             JOptionPane.showMessageDialog(null, "Connection Error:");
