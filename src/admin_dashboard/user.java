@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
 import jb.loginform;
 import net.proteanit.sql.DbUtils;
 
@@ -64,6 +65,8 @@ public class user extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         p_add2 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        p_add3 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -191,6 +194,30 @@ public class user extends javax.swing.JFrame {
         p_add2.add(jLabel13);
         jLabel13.setBounds(6, 3, 72, 20);
 
+        p_add3.setBackground(new java.awt.Color(255, 255, 255));
+        p_add3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                p_add3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                p_add3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                p_add3MouseExited(evt);
+            }
+        });
+        p_add3.setLayout(null);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setText("EDIT");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+        p_add3.add(jLabel14);
+        jLabel14.setBounds(10, 10, 72, 20);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -209,6 +236,7 @@ public class user extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(p_add3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(p_add1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(p_add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(p_add2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -225,6 +253,8 @@ public class user extends javax.swing.JFrame {
                 .addComponent(p_add1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p_add2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(p_add3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(p_add6, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50))
@@ -330,6 +360,49 @@ public class user extends javax.swing.JFrame {
       this.dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
 
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+      int rowIndex = userTbl.getSelectedRow();
+        
+        if(rowIndex < 0){
+            JOptionPane.showMessageDialog(null, "Please select an Item!");
+        }else{
+            try{
+                dbconnector dbc = new dbconnector();
+                TableModel tbl = userTbl.getModel();
+                ResultSet rs = dbc.getData("SELECT * FROM tbl_u WHERE u_id = '"+tbl.getValueAt(rowIndex, 0)+"'");
+                
+                if(rs.next()){
+                    Admin_RegUsers_Add crf = new Admin_RegUsers_Add();
+                    crf.uID.setText(""+rs.getString("u_id"));
+                    crf.fn.setText(""+rs.getString("u_fname"));
+                    crf.ln.setText(""+rs.getString("u_lname"));
+                    crf.usn.setText(""+rs.getString("user_name"));
+                    crf.mail.setText(""+rs.getString("user_emel"));
+                    crf.ut.setSelectedItem(""+rs.getString("account_type"));
+                    crf.st.setSelectedItem(""+rs.getString("u_staus"));
+                    crf.setVisible(true);
+                    crf.add.setEnabled(false);
+                    crf.update.setEnabled(true);
+                    this.dispose();
+                }
+            }catch(SQLException ex){
+                System.out.println(""+ex);
+            }
+        }
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void p_add3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p_add3MouseClicked
+
+    private void p_add3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p_add3MouseEntered
+
+    private void p_add3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p_add3MouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -372,6 +445,7 @@ public class user extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -381,6 +455,7 @@ public class user extends javax.swing.JFrame {
     private javax.swing.JPanel p_add;
     private javax.swing.JPanel p_add1;
     private javax.swing.JPanel p_add2;
+    private javax.swing.JPanel p_add3;
     private javax.swing.JPanel p_add6;
     private javax.swing.JTable userTbl;
     // End of variables declaration//GEN-END:variables

@@ -5,6 +5,7 @@
  */
 package admin_dashboard;
 
+import config.PasswordHasher;
 import jb.loginform;
 import config.session;
 import config.dbconnector;
@@ -313,8 +314,6 @@ public class Admin_RegUsers_Add extends javax.swing.JFrame {
         jPanel1.add(adm_nav);
         adm_nav.setBounds(0, -10, 180, 450);
 
-        mainDk.setBackground(new java.awt.Color(255, 255, 255));
-
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
         add.setBackground(new java.awt.Color(27, 55, 77));
@@ -421,7 +420,7 @@ public class Admin_RegUsers_Add extends javax.swing.JFrame {
         jLabel11.setText("User Type:");
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, 20));
 
-        addBT.setBackground(new java.awt.Color(27, 55, 77));
+        addBT.setBackground(new java.awt.Color(51, 255, 51));
         addBT.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         addBT.setForeground(new java.awt.Color(255, 255, 255));
         addBT.setBorder(null);
@@ -758,7 +757,22 @@ public class Admin_RegUsers_Add extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelActionPerformed
 
     private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
-        // TODO add your handling code here:
+        if(fn.getText().isEmpty() || ln.getText().isEmpty() || mail.getText().isEmpty() || usn.getText().isEmpty() || ps.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "All fields are required!");
+        }else if(ps.getText().length()<8){
+            JOptionPane.showMessageDialog(null, "Password too short!");
+        }else if(dupCheck()){
+            System.out.println("Duplicate Exist");
+        }else{ 
+        dbconnector dbc = new dbconnector();
+        PasswordHasher ph = new PasswordHasher();
+        String password = ph.hashPassword(ps.getText());
+        dbc.updateData("UPDATE tbl_u SET u_fname = '"+fn.getText()+"', "
+                + "u_lname = '"+ln.getText()+"', user_emel = '"+mail.getText()+"', "
+                + "user_name = '"+usn.getText()+"', user_pass = '"+password+"', account_type = '"+ut.getSelectedItem()+"', "
+                + "u_staus = '"+st.getSelectedItem()+"' WHERE u_id = '"+uID.getText()+"'");
+         }
+        
     }//GEN-LAST:event_updateMouseClicked
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
@@ -784,7 +798,7 @@ public class Admin_RegUsers_Add extends javax.swing.JFrame {
         dbconnector dbc = new dbconnector();
         
         dbc.updateData("UPDATE tbl_u SET u_fname = '" + fn.getText() + "', u_lname = '" + ln.getText()
-                + "', u_emel = '" + mail.getText() + "', user_name = '" + usn.getText()
+                + "', user_emel = '" + mail.getText() + "', user_name = '" + usn.getText()
                 + "', user_pass = '" + ps.getText() + "', account_type = '" + ut.getSelectedItem()
                 + "', u_staus = '" + st.getSelectedItem() + "' WHERE u_id = '" + uID.getText() + "'");
 

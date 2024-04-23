@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2024 at 07:54 AM
+-- Generation Time: Apr 22, 2024 at 03:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,6 +39,16 @@ CREATE TABLE `tbl_u` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `tbl_u`
+--
+
+INSERT INTO `tbl_u` (`u_id`, `u_fname`, `u_lname`, `user_emel`, `user_name`, `user_pass`, `account_type`, `u_staus`) VALUES
+(1001, 'johnbert', 'plameran', 'johnbert159@gmail.com', 'jb', '1234', 'Admin', 'Active'),
+(1002, 'christian', 'abendan', 'chan@gmail.com', 'chan', '123456789', 'ADMIN', 'Active'),
+(1003, 'vince', 'bacarisas', 'benz@gmail.com', 'benz', '123456789', 'Admin', 'Active'),
+(1004, 'david', 'romano', 'dabide', 'dabid', '123456789', 'User', 'Active');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -56,7 +66,7 @@ ALTER TABLE `tbl_u`
 -- AUTO_INCREMENT for table `tbl_u`
 --
 ALTER TABLE `tbl_u`
-  MODIFY `u_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `u_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
