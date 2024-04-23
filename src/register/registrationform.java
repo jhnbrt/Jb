@@ -5,6 +5,7 @@
  */
 package register;
 
+import config.PasswordHasher;
 import config.dbconnector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -152,7 +153,7 @@ public class registrationform extends javax.swing.JFrame {
 
         u_type.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         u_type.setForeground(new java.awt.Color(51, 51, 51));
-        u_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "User", " " }));
+        u_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Type", "Admin", "User", " " }));
         u_type.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 u_typeActionPerformed(evt);
@@ -356,7 +357,7 @@ public class registrationform extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         if(u_fname.getText().isEmpty() || u_lname.getText().isEmpty() || u_email.getText().isEmpty() 
-                || u_uname.getText().isEmpty() || u_pass.getText().isEmpty())
+                || u_uname.getText().isEmpty() || u_pass.getText().isEmpty()|| u_type.getSelectedIndex() == 0)
         {
             
             JOptionPane.showMessageDialog(null,"All fields are required!");
@@ -374,8 +375,16 @@ public class registrationform extends javax.swing.JFrame {
         else{
         
         dbconnector connector = new dbconnector();
+        
+        PasswordHasher pH = new PasswordHasher();
+        
+        String password = pH.hashPassword(u_pass.getText());
 
-        if(connector.insertData("INSERT INTO tbl_u(u_fname, u_lname, user_emel, user_name, user_pass, account_type, u_staus) VALUES ('"+u_fname.getText()+"','"+u_lname.getText()+"','"+ u_email.getText()+"','"+u_uname.getText()+"','"+ u_pass.getText()+"','"+ u_type.getSelectedItem()+"','Pending')")){
+        if(connector.insertData("INSERT INTO tbl_u(u_fname, u_lname, user_emel, user_name, user_pass, account_type, u_staus) VALUES ('"
+                +u_fname.getText()+"','"+u_lname.getText()+"','"+ u_email.getText()+"','"+u_uname.getText()+"','"+ password
+                +"','"+ u_type.getSelectedItem()+"','Pending')"))
+        {
+            
             JOptionPane.showMessageDialog(null, "Inserted Success!");
             loginform ads = new loginform();
             this.dispose();

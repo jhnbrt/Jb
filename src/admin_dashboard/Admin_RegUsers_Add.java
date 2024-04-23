@@ -702,10 +702,14 @@ public class Admin_RegUsers_Add extends javax.swing.JFrame {
         }
         else{
             
+            PasswordHasher pH = new PasswordHasher();
+        
+          String password = pH.hashPassword(ps.getText());
+          
              dbconnector dbc = new dbconnector();
      if(dbc.insertData("INSERT INTO tbl_u (u_fname, u_lname, user_emel, user_name, user_pass, account_type, u_staus)"
                 + " VALUES ('"+fn.getText()+"','"+ln.getText()+"','"+mail.getText()+"','"+usn.getText()+"','"
-                +ps.getText()+"','"+ut.getSelectedItem()+"','"+st.getSelectedItem()+"')"))
+                +password+"','"+ut.getSelectedItem()+"','"+st.getSelectedItem()+"')"))
      {
            
             JOptionPane.showMessageDialog(null,"User added successfully!");

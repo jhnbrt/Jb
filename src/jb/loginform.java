@@ -7,6 +7,7 @@ package jb;
 
 
 import admin_dashboard.admin_dashboard;
+import config.PasswordHasher;
 import config.dbconnector;
 import config.session;
 import java.sql.ResultSet;
@@ -257,8 +258,12 @@ public class loginform extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        if(loginAcc(u_uname.getText(),u_pass.getText())){
+        
+        PasswordHasher pH = new PasswordHasher();
+        
+        String password = pH.hashPassword(u_pass.getText());
+        
+        if(loginAcc(u_uname.getText(),password)){
             
              if(!status.equals("Active")){ 
                       JOptionPane.showMessageDialog(null, "In-Active Account, Contact the Admin!");
