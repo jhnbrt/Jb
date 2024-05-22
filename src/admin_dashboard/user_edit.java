@@ -31,9 +31,8 @@ public class user_edit extends javax.swing.JFrame {
         
     }
     
-
-    Color Panecolor = new Color(57,55,77);
-    Color PaneNcolor = new Color(255,255,255);
+Color navcolor =  new Color(204,204,204);
+    Color hovercolor =  new Color(0,0,0);
     
       public static String email, usname;
     
@@ -130,18 +129,6 @@ public class user_edit extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         yesBT = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        adm_nav = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        dashC = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        viewC = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        admin_name1 = new javax.swing.JLabel();
-        admin_usn = new javax.swing.JLabel();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        mainDk = new javax.swing.JDesktopPane();
-        jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         fn = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -163,8 +150,6 @@ public class user_edit extends javax.swing.JFrame {
         cancel = new javax.swing.JButton();
         update = new javax.swing.JButton();
         delete = new javax.swing.JButton();
-        adm_header = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
         confirmDel.setBackground(new java.awt.Color(27, 55, 77));
         confirmDel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -217,162 +202,8 @@ public class user_edit extends javax.swing.JFrame {
         });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(null);
 
-        adm_nav.setBackground(new java.awt.Color(153, 153, 153));
-        adm_nav.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(235, 235, 235), 2));
-        adm_nav.setForeground(new java.awt.Color(153, 153, 153));
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        dashC.setBackground(new java.awt.Color(255, 255, 255));
-        dashC.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dashCMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                dashCMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                dashCMouseExited(evt);
-            }
-        });
-
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(27, 55, 77));
-        jLabel3.setText(" Dashboard");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel3MouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout dashCLayout = new javax.swing.GroupLayout(dashC);
-        dashC.setLayout(dashCLayout);
-        dashCLayout.setHorizontalGroup(
-            dashCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dashCLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        dashCLayout.setVerticalGroup(
-            dashCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dashCLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        viewC.setBackground(new java.awt.Color(255, 255, 255));
-        viewC.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                viewCMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                viewCMouseExited(evt);
-            }
-        });
-
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(27, 55, 77));
-        jLabel5.setText(" Users");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout viewCLayout = new javax.swing.GroupLayout(viewC);
-        viewC.setLayout(viewCLayout);
-        viewCLayout.setHorizontalGroup(
-            viewCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(viewCLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
-        viewCLayout.setVerticalGroup(
-            viewCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(235, 235, 235)));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        admin_name1.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        admin_name1.setForeground(new java.awt.Color(27, 55, 77));
-        admin_name1.setText("Admin name");
-        jPanel5.add(admin_name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, 20));
-
-        admin_usn.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
-        admin_usn.setForeground(new java.awt.Color(100, 115, 122));
-        admin_usn.setText("username");
-        jPanel5.add(admin_usn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 60, 30));
-
-        jToggleButton2.setBackground(new java.awt.Color(27, 55, 77));
-        jToggleButton2.setFont(new java.awt.Font("Yu Gothic UI", 1, 10)); // NOI18N
-        jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton2.setText(" SIGN OUT");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout adm_navLayout = new javax.swing.GroupLayout(adm_nav);
-        adm_nav.setLayout(adm_navLayout);
-        adm_navLayout.setHorizontalGroup(
-            adm_navLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adm_navLayout.createSequentialGroup()
-                .addGroup(adm_navLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adm_navLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(adm_navLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(viewC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(dashC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(160, 160, 160))
-                    .addGroup(adm_navLayout.createSequentialGroup()
-                        .addGroup(adm_navLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(adm_navLayout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        adm_navLayout.setVerticalGroup(
-            adm_navLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adm_navLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(dashC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(viewC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
-        );
-
-        jPanel1.add(adm_nav);
-        adm_nav.setBounds(0, -10, 180, 450);
-
-        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-
-        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(235, 235, 235)));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -556,114 +387,33 @@ public class user_edit extends javax.swing.JFrame {
         });
         jPanel3.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 90, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
-
-        mainDk.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout mainDkLayout = new javax.swing.GroupLayout(mainDk);
-        mainDk.setLayout(mainDkLayout);
-        mainDkLayout.setHorizontalGroup(
-            mainDkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        mainDkLayout.setVerticalGroup(
-            mainDkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainDkLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jPanel1.add(mainDk);
-        mainDk.setBounds(180, 60, 720, 360);
-
-        adm_header.setBackground(new java.awt.Color(153, 153, 153));
-
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("REGISTERED USER SETTINGS");
-
-        javax.swing.GroupLayout adm_headerLayout = new javax.swing.GroupLayout(adm_header);
-        adm_header.setLayout(adm_headerLayout);
-        adm_headerLayout.setHorizontalGroup(
-            adm_headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adm_headerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(424, Short.MAX_VALUE))
-        );
-        adm_headerLayout.setVerticalGroup(
-            adm_headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(adm_header);
-        adm_header.setBounds(180, 0, 730, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void dashCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashCMouseEntered
-       dashC.setBackground(Panecolor);
-    }//GEN-LAST:event_dashCMouseEntered
-
-    private void dashCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashCMouseExited
-        dashC.setBackground(PaneNcolor);
-    }//GEN-LAST:event_dashCMouseExited
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        admin_dashboard ads = new admin_dashboard();
-        ads.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void dashCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashCMouseClicked
-        admin_dashboard ads = new admin_dashboard();
-        ads.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_dashCMouseClicked
-
-    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
-         dashC.setBackground(Panecolor);
-    }//GEN-LAST:event_jLabel3MouseEntered
-
-    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-        dashC.setBackground(PaneNcolor);
-    }//GEN-LAST:event_jLabel3MouseExited
-
-    private void viewCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewCMouseExited
-
-    }//GEN-LAST:event_viewCMouseExited
-
-    private void viewCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewCMouseEntered
-  
-    }//GEN-LAST:event_viewCMouseEntered
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         
@@ -674,161 +424,10 @@ public class user_edit extends javax.swing.JFrame {
             loginform ads = new loginform();
             ads.setVisible(true);
             this.dispose();
-       }else{
-            admin_name1.setText(sess.getFname());
-            admin_usn.setText(sess.getUsername());
        }
       
         
     }//GEN-LAST:event_formWindowActivated
-
-    private void fnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fnActionPerformed
-
-    private void lnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lnActionPerformed
-
-    private void usnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usnActionPerformed
-
-    private void psActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_psActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_psActionPerformed
-
-    private void mailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mailActionPerformed
-
-    private void utActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_utActionPerformed
-
-    private void addBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTActionPerformed
-
-       
-        if(fn.getText().isEmpty() || ln.getText().isEmpty() || mail.getText().isEmpty() 
-                || usn.getText().isEmpty() || ps.getText().isEmpty())
-        {
-            
-            JOptionPane.showMessageDialog(null,"All fields are required!");
-            
-        }else if(ps.getText().length() < 8){
-            
-            JOptionPane.showMessageDialog(null,"Password should be 8 above!");
-            ps.setText("");
-            
-        }else if(dupCheck()){
-            
-            System.out.println("Duplicate Exist!");
-            
-        }
-        else{
-            
-            PasswordHasher pH = new PasswordHasher();
-        
-          String password = pH.hashPassword(ps.getText());
-          
-             dbconnector dbc = new dbconnector();
-     if(dbc.insertData("INSERT INTO tbl_u (u_fname, u_lname, user_emel, user_name, user_pass, account_type, u_staus)"
-                + " VALUES ('"+fn.getText()+"','"+ln.getText()+"','"+mail.getText()+"','"+usn.getText()+"','"
-                +password+"','"+ut.getSelectedItem()+"','"+st.getSelectedItem()+"')"))
-     {
-           
-            JOptionPane.showMessageDialog(null,"User added successfully!");
-            user rA = new user();
-            rA.setVisible(true);
-            this.dispose();
-            
-        }
-        else
-            {
-            
-            JOptionPane.showMessageDialog(null,"Connection Error!"); 
-            
-        }
-            
-        }
-
-    }//GEN-LAST:event_addBTActionPerformed
-
-    private void stActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_stActionPerformed
-
-    private void uIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_uIDActionPerformed
-
-    private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
-
-    }//GEN-LAST:event_cancelMouseClicked
-
-    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-
-        user u = new user();
-        u.setVisible(true);
-        this.dispose();
-        
-    }//GEN-LAST:event_cancelActionPerformed
-
-    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
-        
-    }//GEN-LAST:event_updateMouseClicked
-
-    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-        
-          if(fn.getText().isEmpty() || ln.getText().isEmpty() || mail.getText().isEmpty() 
-                || usn.getText().isEmpty() )
-        {
-            
-            JOptionPane.showMessageDialog(null,"All fields are required!");
-   
-        }else if(updateCheck()){
-            
-            System.out.println("Duplicate Exist!");
-            
-        }
-        else{
-             
-        dbconnector dbc = new dbconnector();
-        
-        dbc.updateData("UPDATE tbl_u SET u_fname = '" + fn.getText() + "', u_lname = '" + ln.getText()
-                + "', user_emel = '" + mail.getText() + "', user_name = '" + usn.getText()
-                +  "', account_type = '" + ut.getSelectedItem()
-                + "', u_staus = '" + st.getSelectedItem() + "' WHERE u_id = '" + uID.getText() + "'");
-
-         user u = new user();
-        u.setVisible(true);
-        this.dispose();
-        }
-          
-    }//GEN-LAST:event_updateActionPerformed
-
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        loginform ads = new loginform();
-
-        JOptionPane.showMessageDialog(null,"Log out successfully!");
-        ads.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-     user us = new user();
-     us.setVisible(true);
-     this.dispose();
-    }//GEN-LAST:event_jLabel5MouseClicked
-
-    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-        Object[] options = {};
-
-        JOptionPane.showOptionDialog(null, confirmDel, "",
-            JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
-            null, options, null);
-
-    }//GEN-LAST:event_deleteActionPerformed
 
     private void yesBTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_yesBTMouseEntered
 
@@ -862,6 +461,135 @@ public class user_edit extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "SQL Error: " + ex.getMessage());
         }
     }//GEN-LAST:event_yesBTActionPerformed
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        Object[] options = {};
+
+        JOptionPane.showOptionDialog(null, confirmDel, "",
+            JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
+            null, options, null);
+    }//GEN-LAST:event_deleteActionPerformed
+
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+
+        if(fn.getText().isEmpty() || ln.getText().isEmpty() || mail.getText().isEmpty()
+            || usn.getText().isEmpty() )
+        {
+
+            JOptionPane.showMessageDialog(null,"All fields are required!");
+
+        }else if(updateCheck()){
+
+            System.out.println("Duplicate Exist!");
+
+        }
+        else{
+
+            dbconnector dbc = new dbconnector();
+
+            dbc.updateData("UPDATE tbl_u SET u_fname = '" + fn.getText() + "', u_lname = '" + ln.getText()
+                + "', user_emel = '" + mail.getText() + "', user_name = '" + usn.getText()
+                +  "', account_type = '" + ut.getSelectedItem()
+                + "', u_staus = '" + st.getSelectedItem() + "' WHERE u_id = '" + uID.getText() + "'");
+
+            user u = new user();
+            u.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_updateActionPerformed
+
+    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
+
+    }//GEN-LAST:event_updateMouseClicked
+
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
+
+        user u = new user();
+        u.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cancelActionPerformed
+
+    private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
+
+    }//GEN-LAST:event_cancelMouseClicked
+
+    private void uIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_uIDActionPerformed
+
+    private void stActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_stActionPerformed
+
+    private void addBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTActionPerformed
+
+        if(fn.getText().isEmpty() || ln.getText().isEmpty() || mail.getText().isEmpty()
+            || usn.getText().isEmpty() || ps.getText().isEmpty())
+        {
+
+            JOptionPane.showMessageDialog(null,"All fields are required!");
+
+        }else if(ps.getText().length() < 8){
+
+            JOptionPane.showMessageDialog(null,"Password should be 8 above!");
+            ps.setText("");
+
+        }else if(dupCheck()){
+
+            System.out.println("Duplicate Exist!");
+
+        }
+        else{
+
+            PasswordHasher pH = new PasswordHasher();
+
+            String password = pH.hashPassword(ps.getText());
+
+            dbconnector dbc = new dbconnector();
+            if(dbc.insertData("INSERT INTO tbl_u (u_fname, u_lname, user_emel, user_name, user_pass, account_type, u_staus)"
+                + " VALUES ('"+fn.getText()+"','"+ln.getText()+"','"+mail.getText()+"','"+usn.getText()+"','"
+                +password+"','"+ut.getSelectedItem()+"','"+st.getSelectedItem()+"')"))
+        {
+
+            JOptionPane.showMessageDialog(null,"User added successfully!");
+            user rA = new user();
+            rA.setVisible(true);
+            this.dispose();
+
+        }
+        else
+        {
+
+            JOptionPane.showMessageDialog(null,"Connection Error!");
+
+        }
+
+        }
+    }//GEN-LAST:event_addBTActionPerformed
+
+    private void utActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_utActionPerformed
+
+    private void mailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mailActionPerformed
+
+    private void psActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_psActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_psActionPerformed
+
+    private void usnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usnActionPerformed
+
+    private void lnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lnActionPerformed
+
+    private void fnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -902,16 +630,10 @@ public class user_edit extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel ACCOUNT_NAME;
     public javax.swing.JButton addBT;
-    private javax.swing.JPanel adm_header;
-    private javax.swing.JPanel adm_nav;
-    private javax.swing.JLabel admin_name1;
-    private javax.swing.JLabel admin_usn;
-    public javax.swing.JButton cancel;
+    private javax.swing.JButton cancel;
     private javax.swing.JPanel confirmDel;
-    private javax.swing.JPanel dashC;
     private javax.swing.JButton delete;
     public javax.swing.JTextField fn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -919,28 +641,20 @@ public class user_edit extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JToggleButton jToggleButton2;
     public javax.swing.JTextField ln;
     public javax.swing.JTextField mail;
-    private javax.swing.JDesktopPane mainDk;
     public javax.swing.JTextField ps;
     public javax.swing.JComboBox<String> st;
     public javax.swing.JTextField uID;
     public javax.swing.JButton update;
     public javax.swing.JTextField usn;
     public javax.swing.JComboBox<String> ut;
-    private javax.swing.JPanel viewC;
     private javax.swing.JButton yesBT;
     // End of variables declaration//GEN-END:variables
 }
