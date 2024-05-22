@@ -160,6 +160,7 @@ public class registrationform extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(255, 0, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setText("Create");
         jButton1.setPreferredSize(new java.awt.Dimension(60, 30));

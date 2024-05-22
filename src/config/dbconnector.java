@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  */
 public class dbconnector {
     
-    private Connection connect;
+    public Connection connect;
     
     public dbconnector(){
         
