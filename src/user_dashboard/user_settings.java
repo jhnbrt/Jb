@@ -235,7 +235,7 @@ public class user_settings extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 422, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
         );
@@ -256,7 +256,7 @@ public class user_settings extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(165, 11, 800, 58);
+        jPanel3.setBounds(165, 11, 610, 58);
 
         jPanel4.setBackground(new java.awt.Color(153, 153, 153));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(235, 235, 235)));
@@ -384,13 +384,13 @@ public class user_settings extends javax.swing.JFrame {
         jPanel4.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 30, 30));
 
         jPanel1.add(jPanel4);
-        jPanel4.setBounds(170, 80, 790, 360);
+        jPanel4.setBounds(170, 80, 610, 360);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 794, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -566,8 +566,8 @@ public class user_settings extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cancel;
-    private javax.swing.JTextField fn;
+    public javax.swing.JButton cancel;
+    public javax.swing.JTextField fn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -584,11 +584,11 @@ public class user_settings extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField ln;
-    private javax.swing.JTextField mail;
-    private javax.swing.JTextField ps;
-    private javax.swing.JTextField uID;
-    private javax.swing.JButton update;
-    private javax.swing.JTextField usn;
+    public javax.swing.JTextField ln;
+    public javax.swing.JTextField mail;
+    public javax.swing.JTextField ps;
+    public javax.swing.JTextField uID;
+    public javax.swing.JButton update;
+    public javax.swing.JTextField usn;
     // End of variables declaration//GEN-END:variables
 }

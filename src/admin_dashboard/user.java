@@ -62,20 +62,18 @@ public class user extends javax.swing.JFrame {
         p_add = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         p_add2 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        p_add3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        p_add7 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        p_add5 = new javax.swing.JPanel();
+        p_add3 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        p_add6 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        p_add1 = new javax.swing.JPanel();
+        p_add5 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        p_add6 = new javax.swing.JPanel();
+        p_add1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         adminName = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         view.setText("View");
         view.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +92,6 @@ public class user extends javax.swing.JFrame {
         popUp.add(edit);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 500));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -167,18 +164,18 @@ public class user extends javax.swing.JFrame {
         });
         p_add2.setLayout(null);
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-reports-24.png"))); // NOI18N
-        jLabel13.setText("VIEW REPORTS");
-        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-history-24.png"))); // NOI18N
+        jLabel14.setText("VIEW HISTORY");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel13MouseClicked(evt);
+                jLabel14MouseClicked(evt);
             }
         });
-        p_add2.add(jLabel13);
-        jLabel13.setBounds(0, 0, 200, 40);
+        p_add2.add(jLabel14);
+        jLabel14.setBounds(0, 0, 200, 40);
 
         p_add3.setBackground(new java.awt.Color(0, 0, 0));
         p_add3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -194,45 +191,18 @@ public class user extends javax.swing.JFrame {
         });
         p_add3.setLayout(null);
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-history-24.png"))); // NOI18N
-        jLabel14.setText("VIEW HISTORY");
-        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-ticket-26.png"))); // NOI18N
+        jLabel16.setText("ISSUED TICKET");
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel14MouseClicked(evt);
+                jLabel16MouseClicked(evt);
             }
         });
-        p_add3.add(jLabel14);
-        jLabel14.setBounds(0, 0, 200, 40);
-
-        p_add7.setBackground(new java.awt.Color(0, 0, 0));
-        p_add7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                p_add7MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                p_add7MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                p_add7MouseExited(evt);
-            }
-        });
-        p_add7.setLayout(null);
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-ticket-purchase-30.png"))); // NOI18N
-        jLabel18.setText("RESERVATION");
-        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel18MouseClicked(evt);
-            }
-        });
-        p_add7.add(jLabel18);
-        jLabel18.setBounds(0, 0, 200, 40);
+        p_add3.add(jLabel16);
+        jLabel16.setBounds(0, 0, 200, 40);
 
         p_add5.setBackground(new java.awt.Color(0, 0, 0));
         p_add5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -248,18 +218,13 @@ public class user extends javax.swing.JFrame {
         });
         p_add5.setLayout(null);
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-ticket-26.png"))); // NOI18N
-        jLabel16.setText("ISSUED TICKET");
-        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel16MouseClicked(evt);
-            }
-        });
-        p_add5.add(jLabel16);
-        jLabel16.setBounds(0, 0, 200, 40);
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-user-24.png"))); // NOI18N
+        jLabel12.setText("USER");
+        p_add5.add(jLabel12);
+        jLabel12.setBounds(0, 0, 200, 40);
 
         p_add6.setBackground(new java.awt.Color(0, 0, 0));
         p_add6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -275,14 +240,6 @@ public class user extends javax.swing.JFrame {
         });
         p_add6.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-log-out-24.png"))); // NOI18N
-        jLabel3.setText("Log out");
-        p_add6.add(jLabel3);
-        jLabel3.setBounds(0, 0, 200, 40);
-
         p_add1.setBackground(new java.awt.Color(0, 0, 0));
         p_add1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -297,13 +254,13 @@ public class user extends javax.swing.JFrame {
         });
         p_add1.setLayout(null);
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-user-24.png"))); // NOI18N
-        jLabel12.setText("USER");
-        p_add1.add(jLabel12);
-        jLabel12.setBounds(0, 0, 200, 40);
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-log-out-24.png"))); // NOI18N
+        jLabel3.setText("Log out");
+        p_add1.add(jLabel3);
+        jLabel3.setBounds(0, 0, 200, 40);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-admin-50.png"))); // NOI18N
         jLabel7.setText("admin");
@@ -316,13 +273,23 @@ public class user extends javax.swing.JFrame {
         adminName.setForeground(new java.awt.Color(255, 255, 255));
         adminName.setText("Name");
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-reports-24.png"))); // NOI18N
+        jLabel13.setText("VIEW REPORTS");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(p_add3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(p_add, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(p_add7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel10)
@@ -332,11 +299,14 @@ public class user extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(adminName)
                     .addComponent(jLabel1))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(p_add2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(p_add5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(p_add1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(p_add6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,8 +325,8 @@ public class user extends javax.swing.JFrame {
                         .addGap(45, 45, 45)))
                 .addComponent(p_add, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(p_add7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
                 .addComponent(p_add2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p_add3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -379,7 +349,8 @@ public class user extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(add)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -397,11 +368,15 @@ public class user extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 501, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         pack();
@@ -512,22 +487,6 @@ public class user extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_p_add3MouseExited
 
-    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel18MouseClicked
-
-    private void p_add7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add7MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_p_add7MouseClicked
-
-    private void p_add7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add7MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_p_add7MouseEntered
-
-    private void p_add7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add7MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_p_add7MouseExited
-
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel16MouseClicked
@@ -618,7 +577,6 @@ public class user extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -632,7 +590,6 @@ public class user extends javax.swing.JFrame {
     private javax.swing.JPanel p_add3;
     private javax.swing.JPanel p_add5;
     private javax.swing.JPanel p_add6;
-    private javax.swing.JPanel p_add7;
     private javax.swing.JPopupMenu popUp;
     private javax.swing.JTable userTbl;
     private javax.swing.JMenuItem view;
