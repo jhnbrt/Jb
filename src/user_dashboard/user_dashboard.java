@@ -37,7 +37,7 @@ public class user_dashboard extends javax.swing.JFrame {
     
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd,yyyy");
         String dt = sdf.format(d);
-        date.setText(dt);
+        cdate.setText(dt);
     }
 
     
@@ -54,7 +54,7 @@ public class user_dashboard extends javax.swing.JFrame {
                 st = new SimpleDateFormat("hh:mm:ss a");
                 
                 String tm = st.format(dt);
-                time.setText(tm);
+                ctime.setText(tm);
             }
         });
         
@@ -66,7 +66,7 @@ public class user_dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        time = new javax.swing.JLabel();
+        ctime = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
@@ -89,7 +89,6 @@ public class user_dashboard extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         p_add = new javax.swing.JPanel();
@@ -105,19 +104,19 @@ public class user_dashboard extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         userName = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        date = new javax.swing.JLabel();
+        cdate = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(null);
 
-        time.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        time.setForeground(new java.awt.Color(255, 255, 255));
-        time.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        time.setText("00:00:00");
-        jPanel1.add(time);
-        time.setBounds(240, 40, 100, 15);
+        ctime.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ctime.setForeground(new java.awt.Color(255, 255, 255));
+        ctime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ctime.setText("00:00:00");
+        jPanel1.add(ctime);
+        ctime.setBounds(240, 40, 100, 15);
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -244,17 +243,6 @@ public class user_dashboard extends javax.swing.JFrame {
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/337228089_758268379024210_7449534471289416918_n (1).jpg"))); // NOI18N
         jPanel1.add(jLabel23);
         jLabel23.setBounds(680, 360, 118, 175);
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("...");
-        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel17MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel17);
-        jLabel17.setBounds(820, 510, 24, 29);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -472,24 +460,26 @@ public class user_dashboard extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 200, 570);
 
-        date.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        date.setForeground(new java.awt.Color(255, 255, 255));
-        date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        date.setText("Month/Day/Year");
-        jPanel1.add(date);
-        date.setBounds(230, 10, 118, 17);
+        cdate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cdate.setForeground(new java.awt.Color(255, 255, 255));
+        cdate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cdate.setText("Month/Day/Year");
+        jPanel1.add(cdate);
+        cdate.setBounds(230, 10, 118, 17);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 854, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -511,10 +501,6 @@ public class user_dashboard extends javax.swing.JFrame {
     }        
     
     
-    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel17MouseClicked
-
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel10MouseClicked
@@ -646,14 +632,14 @@ public class user_dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel date;
+    private javax.swing.JLabel cdate;
+    private javax.swing.JLabel ctime;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -685,7 +671,6 @@ public class user_dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel p_add3;
     private javax.swing.JPanel p_add5;
     private javax.swing.JPanel p_add6;
-    private javax.swing.JLabel time;
     private javax.swing.JLabel userName;
     // End of variables declaration//GEN-END:variables
 }
