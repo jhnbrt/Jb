@@ -68,6 +68,7 @@ public class admin_dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         ctime = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -110,30 +111,13 @@ public class admin_dashboard extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         cdate = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        time = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
-        jLabel53 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
-        date = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         p_add = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -150,8 +134,14 @@ public class admin_dashboard extends javax.swing.JFrame {
         adminName = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        date = new javax.swing.JLabel();
+        time = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(null);
@@ -523,148 +513,43 @@ public class admin_dashboard extends javax.swing.JFrame {
         jPanel1.add(cdate);
         cdate.setBounds(230, 10, 118, 17);
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 597, -1, -1));
+
         jPanel5.setBackground(new java.awt.Color(51, 51, 51));
         jPanel5.setLayout(null);
 
-        time.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        time.setForeground(new java.awt.Color(255, 255, 255));
-        time.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        time.setText("00:00:00");
-        jPanel5.add(time);
-        time.setBounds(240, 40, 100, 15);
-
-        jLabel39.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel39.setText("SEARCH:");
-        jPanel5.add(jLabel39);
-        jLabel39.setBounds(520, 30, 50, 17);
-
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.white, java.awt.Color.black, java.awt.Color.lightGray));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 192, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 21, Short.MAX_VALUE)
-        );
-
-        jPanel5.add(jPanel6);
-        jPanel6.setBounds(580, 20, 198, 27);
-
-        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel40.setText("________________________________________________________________________________________________________________");
-        jPanel5.add(jLabel40);
-        jLabel40.setBounds(212, 50, 650, 20);
-
-        jLabel41.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 51));
         jLabel41.setText("Now Showing:");
         jPanel5.add(jLabel41);
-        jLabel41.setBounds(220, 70, 109, 23);
+        jLabel41.setBounds(220, 70, 150, 21);
 
-        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/441877926_762629292362510_8601897996805564709_n (4).jpg"))); // NOI18N
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/file (9).png"))); // NOI18N
         jPanel5.add(jLabel42);
-        jLabel42.setBounds(230, 100, 114, 175);
-
-        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/417076299_1712406199586238_3163263231560289225_n (1).jpg"))); // NOI18N
-        jPanel5.add(jLabel43);
-        jLabel43.setBounds(370, 100, 124, 175);
-
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/345247350_210772321711135_6682477347780063946_n (1).jpg"))); // NOI18N
-        jPanel5.add(jLabel44);
-        jLabel44.setBounds(520, 100, 119, 175);
-
-        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/441366260_1596625851192457_6791872998839692218_n (1).jpg"))); // NOI18N
-        jPanel5.add(jLabel45);
-        jLabel45.setBounds(670, 100, 140, 175);
-
-        jLabel46.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel46.setText("Theatre 4");
-        jPanel5.add(jLabel46);
-        jLabel46.setBounds(260, 280, 45, 14);
-
-        jLabel47.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel47.setText("(3:00 PM - 4:30 PM)");
-        jPanel5.add(jLabel47);
-        jLabel47.setBounds(240, 290, 89, 14);
-
-        jLabel48.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel48.setText("Theatre 3");
-        jPanel5.add(jLabel48);
-        jLabel48.setBounds(410, 280, 45, 14);
-
-        jLabel49.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel49.setText("(1:00 PM - 2:230 PM)");
-        jPanel5.add(jLabel49);
-        jLabel49.setBounds(390, 290, 95, 14);
-
-        jLabel50.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel50.setText("Theatre 2");
-        jPanel5.add(jLabel50);
-        jLabel50.setBounds(560, 280, 45, 14);
-
-        jLabel51.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel51.setText("(10:00 AM - 12:00 PM)");
-        jPanel5.add(jLabel51);
-        jLabel51.setBounds(530, 290, 101, 14);
-
-        jLabel52.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel52.setText("Theatre 1");
-        jPanel5.add(jLabel52);
-        jLabel52.setBounds(710, 280, 45, 14);
-
-        jLabel53.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel53.setText("(8:00 AM- 9:30 AM)");
-        jPanel5.add(jLabel53);
-        jLabel53.setBounds(690, 290, 87, 14);
-
-        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel54.setText("________________________________________________________________________________________________________________");
-        jPanel5.add(jLabel54);
-        jLabel54.setBounds(212, 310, 650, 14);
+        jLabel42.setBounds(210, 60, 640, 260);
 
         jLabel55.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel55.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel55.setText("Upcoming Movies:");
+        jLabel55.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel55.setText("Up Next:");
         jPanel5.add(jLabel55);
-        jLabel55.setBounds(230, 330, 142, 23);
+        jLabel55.setBounds(220, 330, 90, 20);
 
         jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/441289601_922454466237298_3129241131942974731_n (1).jpg"))); // NOI18N
         jPanel5.add(jLabel56);
-        jLabel56.setBounds(220, 360, 124, 175);
+        jLabel56.setBounds(220, 370, 124, 175);
 
         jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/fd7423d5f07a46fcdacb5159517626e51538197757_full (1).jpg"))); // NOI18N
         jPanel5.add(jLabel57);
-        jLabel57.setBounds(380, 360, 117, 175);
+        jLabel57.setBounds(380, 370, 117, 175);
 
         jLabel58.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/371791290_2272707069785106_6322118491006261536_n (1).jpg"))); // NOI18N
         jPanel5.add(jLabel58);
-        jLabel58.setBounds(530, 360, 117, 175);
+        jLabel58.setBounds(530, 370, 120, 175);
 
         jLabel59.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/337228089_758268379024210_7449534471289416918_n (1).jpg"))); // NOI18N
         jPanel5.add(jLabel59);
-        jLabel59.setBounds(680, 360, 118, 175);
-
-        date.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        date.setForeground(new java.awt.Color(255, 255, 255));
-        date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        date.setText("Month/Day/Year");
-        jPanel5.add(date);
-        date.setBounds(230, 10, 118, 17);
+        jLabel59.setBounds(680, 370, 118, 175);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -831,13 +716,13 @@ public class admin_dashboard extends javax.swing.JFrame {
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-admin-50.png"))); // NOI18N
         jLabel10.setText("admin");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 52, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 50, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ADMIN");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 17));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, 20));
 
         adminName.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         adminName.setForeground(new java.awt.Color(255, 255, 255));
@@ -870,25 +755,52 @@ public class admin_dashboard extends javax.swing.JFrame {
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 462, 200, 40));
 
         jPanel5.add(jPanel2);
-        jPanel2.setBounds(0, 0, 202, 590);
+        jPanel2.setBounds(0, 0, 201, 590);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 853, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30))
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.white, java.awt.Color.black, java.awt.Color.lightGray));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 184, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 14, Short.MAX_VALUE)
         );
+
+        jPanel5.add(jPanel6);
+        jPanel6.setBounds(600, 10, 190, 20);
+
+        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setText("Search:");
+        jPanel5.add(jLabel39);
+        jLabel39.setBounds(550, 10, 50, 20);
+
+        date.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        date.setForeground(new java.awt.Color(255, 255, 255));
+        date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        date.setText("Month/Day/Year");
+        jPanel5.add(date);
+        date.setBounds(220, 10, 118, 17);
+
+        time.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        time.setForeground(new java.awt.Color(255, 255, 255));
+        time.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        time.setText("00:00:00");
+        jPanel5.add(time);
+        time.setBounds(230, 30, 100, 15);
+
+        jLabel43.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(255, 255, 51));
+        jLabel43.setText("Now Showing:");
+        jPanel5.add(jLabel43);
+        jLabel43.setBounds(220, 70, 150, 21);
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 869, 591));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -903,11 +815,12 @@ public class admin_dashboard extends javax.swing.JFrame {
             ads.setVisible(true);
             this.dispose();
        }else{
-          adminName.setText(""+sess.getFname());
-      
+          
            try{
            dbconnector dbc = new dbconnector();
            ResultSet rs = dbc.getData("SELECT * FROM tbl_u WHERE u_id = '"+sess.getUid()+"'");
+           
+           
            
            if(rs.next()){
                
@@ -1158,6 +1071,7 @@ public class admin_dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adminName;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel cdate;
     private javax.swing.JLabel ctime;
     private javax.swing.JLabel date;
@@ -1195,22 +1109,10 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;

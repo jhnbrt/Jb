@@ -83,7 +83,7 @@ public class SystemLogs extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel2.setForeground(new java.awt.Color(255, 204, 0));
         jLabel2.setText("SYSTEM LOGS");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(230, 30, 180, 40);
