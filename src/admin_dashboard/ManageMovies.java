@@ -75,7 +75,7 @@ public class ManageMovies extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setLayout(null);
 
         p_add.setBackground(new java.awt.Color(0, 0, 0));
         p_add.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -99,7 +99,8 @@ public class ManageMovies extends javax.swing.JFrame {
         p_add.add(jLabel6);
         jLabel6.setBounds(0, 0, 200, 40);
 
-        jPanel2.add(p_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 178, 200, 41));
+        jPanel2.add(p_add);
+        p_add.setBounds(1, 178, 200, 41);
 
         p_add2.setBackground(new java.awt.Color(0, 0, 0));
         p_add2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -136,7 +137,8 @@ public class ManageMovies extends javax.swing.JFrame {
             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel2.add(p_add2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 268, -1, -1));
+        jPanel2.add(p_add2);
+        p_add2.setBounds(1, 268, 200, 40);
 
         p_add3.setBackground(new java.awt.Color(0, 0, 0));
         p_add3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -165,7 +167,8 @@ public class ManageMovies extends javax.swing.JFrame {
         p_add3.add(jLabel16);
         jLabel16.setBounds(0, -10, 200, 40);
 
-        jPanel2.add(p_add3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 326, 200, 35));
+        jPanel2.add(p_add3);
+        p_add3.setBounds(1, 326, 200, 35);
 
         p_add5.setBackground(new java.awt.Color(0, 0, 0));
         p_add5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -197,7 +200,8 @@ public class ManageMovies extends javax.swing.JFrame {
             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel2.add(p_add5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 365, -1, -1));
+        jPanel2.add(p_add5);
+        p_add5.setBounds(1, 365, 200, 40);
 
         p_add15.setBackground(new java.awt.Color(0, 0, 0));
         p_add15.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -234,24 +238,28 @@ public class ManageMovies extends javax.swing.JFrame {
             .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel2.add(p_add15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 411, -1, -1));
+        jPanel2.add(p_add15);
+        p_add15.setBounds(1, 411, 200, 40);
 
         jLabel10.setForeground(new java.awt.Color(255, 51, 51));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-admin-50.png"))); // NOI18N
         jLabel10.setText("admin");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 50, 50, -1));
+        jPanel2.add(jLabel10);
+        jLabel10.setBounds(72, 50, 50, 50);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ADMIN");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 30));
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(80, 100, 42, 30);
 
         adminName.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         adminName.setForeground(new java.awt.Color(255, 255, 255));
         adminName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         adminName.setText("Name");
-        jPanel2.add(adminName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, 20));
+        jPanel2.add(adminName);
+        adminName.setBounds(80, 130, 34, 20);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
@@ -263,7 +271,8 @@ public class ManageMovies extends javax.swing.JFrame {
                 jLabel18MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 225, 200, 40));
+        jPanel2.add(jLabel18);
+        jLabel18.setBounds(1, 225, 200, 40);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -275,7 +284,8 @@ public class ManageMovies extends javax.swing.JFrame {
                 jLabel7MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 462, 200, 40));
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(1, 462, 200, 40);
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -287,18 +297,18 @@ public class ManageMovies extends javax.swing.JFrame {
 
         Moviestbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(Moviestbl);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 680, 436));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 640, 436));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -509,16 +519,13 @@ public class ManageMovies extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 890, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

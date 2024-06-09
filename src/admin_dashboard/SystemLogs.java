@@ -38,6 +38,8 @@ public class SystemLogs extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         p_add7 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -87,6 +89,22 @@ public class SystemLogs extends javax.swing.JFrame {
         jLabel2.setText("SYSTEM LOGS");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(230, 30, 180, 40);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(20, 80, 600, 402);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -478,6 +496,8 @@ public class SystemLogs extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JPanel p_add;
     private javax.swing.JPanel p_add15;
     private javax.swing.JPanel p_add2;

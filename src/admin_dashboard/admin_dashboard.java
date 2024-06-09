@@ -57,7 +57,7 @@ public class admin_dashboard extends javax.swing.JFrame {
                 st = new SimpleDateFormat("hh:mm:ss a");
                 
                 String tm = st.format(dt);
-                time.setText(tm);
+                rt.setText(tm);
             }
         });
         
@@ -137,8 +137,9 @@ public class admin_dashboard extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
-        time = new javax.swing.JLabel();
+        rt = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
+        time1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -537,19 +538,19 @@ public class admin_dashboard extends javax.swing.JFrame {
 
         jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/441289601_922454466237298_3129241131942974731_n (1).jpg"))); // NOI18N
         jPanel5.add(jLabel56);
-        jLabel56.setBounds(220, 370, 124, 175);
+        jLabel56.setBounds(210, 360, 124, 175);
 
         jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/fd7423d5f07a46fcdacb5159517626e51538197757_full (1).jpg"))); // NOI18N
         jPanel5.add(jLabel57);
-        jLabel57.setBounds(380, 370, 117, 175);
+        jLabel57.setBounds(340, 360, 117, 175);
 
         jLabel58.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/371791290_2272707069785106_6322118491006261536_n (1).jpg"))); // NOI18N
         jPanel5.add(jLabel58);
-        jLabel58.setBounds(530, 370, 120, 175);
+        jLabel58.setBounds(470, 360, 120, 175);
 
         jLabel59.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/337228089_758268379024210_7449534471289416918_n (1).jpg"))); // NOI18N
         jPanel5.add(jLabel59);
-        jLabel59.setBounds(680, 370, 118, 175);
+        jLabel59.setBounds(600, 360, 118, 175);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -787,18 +788,25 @@ public class admin_dashboard extends javax.swing.JFrame {
         jPanel5.add(date);
         date.setBounds(220, 10, 118, 17);
 
-        time.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        time.setForeground(new java.awt.Color(255, 255, 255));
-        time.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        time.setText("00:00:00");
-        jPanel5.add(time);
-        time.setBounds(230, 30, 100, 15);
+        rt.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        rt.setForeground(new java.awt.Color(255, 255, 255));
+        rt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rt.setText("00:00:00");
+        jPanel5.add(rt);
+        rt.setBounds(220, 550, 100, 15);
 
         jLabel43.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(255, 255, 51));
         jLabel43.setText("Now Showing:");
         jPanel5.add(jLabel43);
         jLabel43.setBounds(220, 70, 150, 21);
+
+        time1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        time1.setForeground(new java.awt.Color(255, 255, 255));
+        time1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        time1.setText("00:00:00");
+        jPanel5.add(time1);
+        time1.setBounds(230, 30, 100, 15);
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 869, 591));
 
@@ -1139,7 +1147,8 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel p_add7;
     private javax.swing.JPanel p_add8;
     private javax.swing.JPanel p_add9;
-    private javax.swing.JLabel time;
+    private javax.swing.JLabel rt;
+    private javax.swing.JLabel time1;
     private javax.swing.JLabel userName1;
     // End of variables declaration//GEN-END:variables
 }

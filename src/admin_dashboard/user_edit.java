@@ -378,7 +378,7 @@ Color navcolor =  new Color(204,204,204);
         delete.setBackground(new java.awt.Color(0, 0, 0));
         delete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         delete.setForeground(new java.awt.Color(255, 255, 255));
-        delete.setText("DELETE");
+        delete.setText("ARCHIVE");
         delete.setPreferredSize(new java.awt.Dimension(60, 30));
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -463,11 +463,30 @@ Color navcolor =  new Color(204,204,204);
     }//GEN-LAST:event_yesBTActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-        Object[] options = {};
+     dbconnector dbc = new dbconnector();
 
-        JOptionPane.showOptionDialog(null, confirmDel, "",
-            JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
-            null, options, null);
+  
+    String sql = "UPDATE tbl_u SET u_staus = ? WHERE u_id = ?";
+
+    try (PreparedStatement pst = dbc.connect.prepareStatement(sql)) {
+        pst.setString(1, "Archived"); 
+        pst.setString(2, uID.getText()); 
+        int rowsAffected = pst.executeUpdate();
+
+        if (rowsAffected > 0) {
+            JOptionPane.showMessageDialog(null, "User data archived.");
+            
+     
+            
+            user u = new user();
+            u.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "No records found to archive.");
+        }
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "SQL Error: " + ex.getMessage());
+    }
     }//GEN-LAST:event_deleteActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
@@ -630,7 +649,7 @@ Color navcolor =  new Color(204,204,204);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel ACCOUNT_NAME;
     public javax.swing.JButton addBT;
-    private javax.swing.JButton cancel;
+    public javax.swing.JButton cancel;
     private javax.swing.JPanel confirmDel;
     private javax.swing.JButton delete;
     public javax.swing.JTextField fn;
