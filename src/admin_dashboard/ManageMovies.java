@@ -70,6 +70,10 @@ public class ManageMovies extends javax.swing.JFrame {
         adminName1 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        add = new javax.swing.JButton();
+        update = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
+        cancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -293,7 +297,7 @@ public class ManageMovies extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 204, 0));
         jLabel2.setText("MANAGE MOVIES");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 29, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
 
         Moviestbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -308,7 +312,7 @@ public class ManageMovies extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(Moviestbl);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 640, 436));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 640, 436));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -514,6 +518,62 @@ public class ManageMovies extends javax.swing.JFrame {
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 462, 200, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 590));
+
+        add.setBackground(new java.awt.Color(27, 55, 77));
+        add.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        add.setForeground(new java.awt.Color(255, 255, 255));
+        add.setText("Add");
+        add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionPerformed(evt);
+            }
+        });
+        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, -1, -1));
+
+        update.setBackground(new java.awt.Color(0, 0, 0));
+        update.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        update.setForeground(new java.awt.Color(255, 255, 255));
+        update.setText("UPDATE");
+        update.setEnabled(false);
+        update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateMouseClicked(evt);
+            }
+        });
+        update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, 90, 30));
+
+        delete.setBackground(new java.awt.Color(0, 0, 0));
+        delete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        delete.setForeground(new java.awt.Color(255, 255, 255));
+        delete.setText("ARCHIVE");
+        delete.setPreferredSize(new java.awt.Dimension(60, 30));
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, 90, 30));
+
+        cancel.setBackground(new java.awt.Color(0, 0, 0));
+        cancel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        cancel.setForeground(new java.awt.Color(255, 255, 255));
+        cancel.setText("CANCEL");
+        cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelMouseClicked(evt);
+            }
+        });
+        cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 520, 90, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -725,6 +785,81 @@ public class ManageMovies extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel9MouseClicked
 
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        user_edit ue = new user_edit();
+        ue.update.setEnabled(false);
+        ue.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_addActionPerformed
+
+    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
+
+    }//GEN-LAST:event_updateMouseClicked
+
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+
+        if(fn.getText().isEmpty() || ln.getText().isEmpty() || mail.getText().isEmpty()
+            || usn.getText().isEmpty() )
+        {
+
+            JOptionPane.showMessageDialog(null,"All fields are required!");
+
+        }else if(updateCheck()){
+
+            System.out.println("Duplicate Exist!");
+
+        }
+        else{
+
+            dbconnector dbc = new dbconnector();
+
+            dbc.updateData("UPDATE tbl_u SET u_fname = '" + fn.getText() + "', u_lname = '" + ln.getText()
+                + "', user_emel = '" + mail.getText() + "', user_name = '" + usn.getText()
+                +  "', account_type = '" + ut.getSelectedItem()
+                + "', u_staus = '" + st.getSelectedItem() + "' WHERE u_id = '" + uID.getText() + "'");
+
+            user u = new user();
+            u.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_updateActionPerformed
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        dbconnector dbc = new dbconnector();
+
+        String sql = "UPDATE tbl_u SET u_staus = ? WHERE u_id = ?";
+
+        try (PreparedStatement pst = dbc.connect.prepareStatement(sql)) {
+            pst.setString(1, "Archived");
+            pst.setString(2, uID.getText());
+            int rowsAffected = pst.executeUpdate();
+
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(null, "User data archived.");
+
+                user u = new user();
+                u.setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "No records found to archive.");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "SQL Error: " + ex.getMessage());
+        }
+    }//GEN-LAST:event_deleteActionPerformed
+
+    private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
+
+    }//GEN-LAST:event_cancelMouseClicked
+
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
+
+        user u = new user();
+        u.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cancelActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -762,8 +897,11 @@ public class ManageMovies extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Moviestbl;
+    public javax.swing.JButton add;
     private javax.swing.JLabel adminName;
     private javax.swing.JLabel adminName1;
+    public javax.swing.JButton cancel;
+    private javax.swing.JButton delete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -797,5 +935,6 @@ public class ManageMovies extends javax.swing.JFrame {
     private javax.swing.JPanel p_add5;
     private javax.swing.JPanel p_add6;
     private javax.swing.JPanel p_add7;
+    public javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

@@ -300,7 +300,7 @@ Color navcolor =  new Color(204,204,204);
         addBT.setBackground(new java.awt.Color(0, 0, 0));
         addBT.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         addBT.setForeground(new java.awt.Color(255, 255, 255));
-        addBT.setText("add");
+        addBT.setText("ADD");
         addBT.setBorder(null);
         addBT.setBorderPainted(false);
         addBT.setOpaque(false);
@@ -345,7 +345,7 @@ Color navcolor =  new Color(204,204,204);
         cancel.setBackground(new java.awt.Color(0, 0, 0));
         cancel.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         cancel.setForeground(new java.awt.Color(255, 255, 255));
-        cancel.setText("cancel");
+        cancel.setText("CANCEL");
         cancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cancelMouseClicked(evt);
@@ -356,12 +356,12 @@ Color navcolor =  new Color(204,204,204);
                 cancelActionPerformed(evt);
             }
         });
-        jPanel3.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 80, 30));
+        jPanel3.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 90, 30));
 
         update.setBackground(new java.awt.Color(0, 0, 0));
         update.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         update.setForeground(new java.awt.Color(255, 255, 255));
-        update.setText("update");
+        update.setText("UPDATE");
         update.setEnabled(false);
         update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -373,7 +373,7 @@ Color navcolor =  new Color(204,204,204);
                 updateActionPerformed(evt);
             }
         });
-        jPanel3.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 80, 30));
+        jPanel3.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 90, 30));
 
         delete.setBackground(new java.awt.Color(0, 0, 0));
         delete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -385,7 +385,7 @@ Color navcolor =  new Color(204,204,204);
                 deleteActionPerformed(evt);
             }
         });
-        jPanel3.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 90, -1));
+        jPanel3.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 90, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
