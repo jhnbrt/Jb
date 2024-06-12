@@ -10,12 +10,10 @@ import jb.loginform;
 import config.session;
 import config.dbconnector;
 import java.awt.Color;
-import java.awt.Window;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 
 /**
  *
@@ -335,7 +333,7 @@ Color navcolor =  new Color(204,204,204);
                 uIDActionPerformed(evt);
             }
         });
-        jPanel3.add(uID, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 100, 24));
+        jPanel3.add(uID, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 70, 24));
 
         jLabel16.setFont(new java.awt.Font("Yu Gothic UI", 1, 11)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -439,27 +437,7 @@ Color navcolor =  new Color(204,204,204);
 
     private void yesBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesBTActionPerformed
 
-        dbconnector dbc = new dbconnector();
-
-        String sql = "DELETE FROM tbl_u WHERE u_id = ?";
-
-        try (PreparedStatement pst = dbc.connect.prepareStatement(sql)) {
-            pst.setString(1, uID.getText());
-            int rowsAffected = pst.executeUpdate();
-
-            if (rowsAffected > 0) {
-                Window window = SwingUtilities.getWindowAncestor(confirmDel);
-                window.dispose();
-                JOptionPane.showMessageDialog(null, "User deleted successfully!");
-                user u = new user();
-                u.setVisible(true);
-                this.dispose();
-            } else {
-                JOptionPane.showMessageDialog(null, "No records found to delete.");
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "SQL Error: " + ex.getMessage());
-        }
+      
     }//GEN-LAST:event_yesBTActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
