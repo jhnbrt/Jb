@@ -197,7 +197,7 @@ public class user extends javax.swing.JFrame {
             }
         });
         p_add3.add(jLabel16);
-        jLabel16.setBounds(0, 0, 200, 40);
+        jLabel16.setBounds(0, -10, 200, 40);
 
         p_add5.setBackground(new java.awt.Color(0, 0, 0));
         p_add5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -436,7 +436,9 @@ public class user extends javax.swing.JFrame {
     }//GEN-LAST:event_p_add2MouseExited
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        // TODO add your handling code here:
+        SystemLogs ue = new SystemLogs();
+        ue.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void p_add3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add3MouseClicked
@@ -452,7 +454,9 @@ public class user extends javax.swing.JFrame {
     }//GEN-LAST:event_p_add3MouseExited
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
-        // TODO add your handling code here:
+        IssuedTicket ue = new IssuedTicket();
+        ue.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel16MouseClicked
 
     private void p_add5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add5MouseClicked
@@ -484,11 +488,15 @@ public class user extends javax.swing.JFrame {
     }//GEN-LAST:event_p_add1MouseExited
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
-        // TODO add your handling code here:
+        Reports ue = new Reports();
+        ue.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void jLabel61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel61MouseClicked
-        // TODO add your handling code here:
+        ManageMovies ue = new ManageMovies();
+        ue.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel61MouseClicked
 
     /**

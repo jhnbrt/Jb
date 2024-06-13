@@ -297,6 +297,7 @@ public class Reports extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void p_addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_addMouseClicked
@@ -366,7 +367,9 @@ public class Reports extends javax.swing.JFrame {
     }//GEN-LAST:event_p_add5MouseExited
 
     private void jLabel61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel61MouseClicked
-        // TODO add your handling code here:
+        ManageMovies ue = new ManageMovies();
+        ue.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel61MouseClicked
 
     private void p_add15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add15MouseClicked

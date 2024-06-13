@@ -62,7 +62,7 @@ public class Movies_edit extends javax.swing.JFrame {
 
         title.setBackground(new java.awt.Color(102, 102, 102));
         title.setFont(new java.awt.Font("Yu Gothic UI", 0, 10)); // NOI18N
-        title.setForeground(new java.awt.Color(100, 115, 122));
+        title.setForeground(new java.awt.Color(255, 255, 255));
         title.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 titleActionPerformed(evt);
@@ -77,7 +77,7 @@ public class Movies_edit extends javax.swing.JFrame {
 
         genre.setBackground(new java.awt.Color(102, 102, 102));
         genre.setFont(new java.awt.Font("Yu Gothic UI", 0, 10)); // NOI18N
-        genre.setForeground(new java.awt.Color(100, 115, 122));
+        genre.setForeground(new java.awt.Color(255, 255, 255));
         genre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 genreActionPerformed(evt);
@@ -92,7 +92,7 @@ public class Movies_edit extends javax.swing.JFrame {
 
         r_year.setBackground(new java.awt.Color(102, 102, 102));
         r_year.setFont(new java.awt.Font("Yu Gothic UI", 0, 10)); // NOI18N
-        r_year.setForeground(new java.awt.Color(100, 115, 122));
+        r_year.setForeground(new java.awt.Color(255, 255, 255));
         r_year.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_yearActionPerformed(evt);
@@ -112,7 +112,7 @@ public class Movies_edit extends javax.swing.JFrame {
 
         runtime.setBackground(new java.awt.Color(102, 102, 102));
         runtime.setFont(new java.awt.Font("Yu Gothic UI", 0, 10)); // NOI18N
-        runtime.setForeground(new java.awt.Color(100, 115, 122));
+        runtime.setForeground(new java.awt.Color(255, 255, 255));
         runtime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 runtimeActionPerformed(evt);
@@ -202,7 +202,7 @@ public class Movies_edit extends javax.swing.JFrame {
 
         director.setBackground(new java.awt.Color(102, 102, 102));
         director.setFont(new java.awt.Font("Yu Gothic UI", 0, 10)); // NOI18N
-        director.setForeground(new java.awt.Color(100, 115, 122));
+        director.setForeground(new java.awt.Color(255, 255, 255));
         director.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 directorActionPerformed(evt);
@@ -231,6 +231,7 @@ public class Movies_edit extends javax.swing.JFrame {
         getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 380));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void titleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titleActionPerformed
@@ -300,21 +301,24 @@ if (dbc.insertData("INSERT INTO tbl_movies (title, r_year, genre, run_time, dire
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
 
-        if(title.getText().isEmpty() || genre.getText().isEmpty() || runtime.getText().isEmpty()
-            || r_year.getText().isEmpty() || director.getText().isEmpty())
+        if(title.getText().isEmpty() || r_year.getText().isEmpty() || genre.getText().isEmpty()
+            || runtime.getText().isEmpty() || director.getText().isEmpty() )
         {
 
             JOptionPane.showMessageDialog(null,"All fields are required!");
-
 
         }
         else{
 
             dbconnector dbc = new dbconnector();
 
-            dbc.updateData("UPDATE tbl_ movies  SET title = '" + title.getText() + "', r_year = '" + r_year.getText()
-                + "', genre = '" + genre.getText() + "', run_time = '" + runtime.getText()+"', director = '" + director.getText()
-                +  "' WHERE m_id = '" + mID.getText() + "'");
+            dbc.updateData("UPDATE tbl_movies SET title = '" + title.getText() 
+                + "', r_year = '" + r_year.getText()
+                + "', genre = '" + genre.getText() 
+                + "', run_time = '" + runtime.getText()
+                + "', director = '" + director.getText()
+                +  "', movie_status = '" + moviestatus.getSelectedItem() 
+                + "' WHERE m_id = '" + mID.getText() + "'");
 
             ManageMovies u = new ManageMovies();
             u.setVisible(true);
