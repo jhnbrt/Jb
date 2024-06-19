@@ -559,7 +559,7 @@ public class ManageMovies extends javax.swing.JFrame {
                 addActionPerformed(evt);
             }
         });
-        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 60, -1));
+        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 60, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -624,13 +624,13 @@ public class ManageMovies extends javax.swing.JFrame {
     }//GEN-LAST:event_p_add2MouseExited
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
-        IssuedTicket u = new IssuedTicket();
+        Tickets u = new Tickets();
         u.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel16MouseClicked
 
     private void p_add3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add3MouseClicked
-        IssuedTicket u = new IssuedTicket();
+        Tickets u = new Tickets();
         u.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_p_add3MouseClicked
@@ -721,13 +721,13 @@ public class ManageMovies extends javax.swing.JFrame {
     }//GEN-LAST:event_p_add4MouseExited
 
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
-        IssuedTicket u = new IssuedTicket();
+        Tickets u = new Tickets();
         u.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel17MouseClicked
 
     private void p_add6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add6MouseClicked
-        IssuedTicket u = new IssuedTicket();
+        Tickets u = new Tickets();
         u.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_p_add6MouseClicked

@@ -415,13 +415,13 @@ public class SystemLogs extends javax.swing.JFrame {
     }//GEN-LAST:event_p_add2MouseExited
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
-        IssuedTicket u = new IssuedTicket();
+        Tickets u = new Tickets();
         u.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel16MouseClicked
 
     private void p_add3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add3MouseClicked
-        IssuedTicket u = new IssuedTicket();
+        Tickets u = new Tickets();
         u.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_p_add3MouseClicked

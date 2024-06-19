@@ -20,6 +20,7 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import jb.loginform;
+import net.proteanit.sql.DbUtils;
 /**
  *
  * @author Dela Cuesta
@@ -31,6 +32,7 @@ public class admin_dashboard extends javax.swing.JFrame {
      */
     public admin_dashboard() {
         initComponents();
+        displayData();
         date();
         time();
     }
@@ -94,7 +96,7 @@ public class admin_dashboard extends javax.swing.JFrame {
         date = new javax.swing.JLabel();
         time = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbl_movies = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -315,15 +317,15 @@ public class admin_dashboard extends javax.swing.JFrame {
         date.setForeground(new java.awt.Color(255, 255, 255));
         date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         date.setText("Month/Day/Year");
-        jPanel5.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
+        jPanel5.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
         time.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         time.setForeground(new java.awt.Color(255, 255, 255));
         time.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         time.setText("00:00:00");
-        jPanel5.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, 80, 20));
+        jPanel5.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 80, 20));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_movies.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -334,7 +336,7 @@ public class admin_dashboard extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbl_movies);
 
         jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 620, 400));
 
@@ -353,6 +355,19 @@ public class admin_dashboard extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
+    
+    public void displayData(){
+        try{
+            dbconnector connector = new dbconnector();
+            ResultSet rs = connector.getData("SELECT m_id, title, director,genre,r_year,run_time,"
+                    + "movie_status FROM tbl_movies WHERE movie_status = 'Active'");
+            tbl_movies.setModel(DbUtils.resultSetToTableModel(rs));
+             rs.close();
+        }catch(SQLException ex){
+            System.out.println("Errors: "+ex.getMessage());
+        
+        }
+    }
     
     
     
@@ -447,13 +462,13 @@ public class admin_dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_p_add3MouseEntered
 
     private void p_add3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add3MouseClicked
-        IssuedTicket u = new IssuedTicket();
+        Tickets u = new Tickets();
         u.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_p_add3MouseClicked
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
-        IssuedTicket u = new IssuedTicket();
+        Tickets u = new Tickets();
         u.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel16MouseClicked
@@ -563,12 +578,12 @@ public class admin_dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel p_add;
     private javax.swing.JPanel p_add15;
     private javax.swing.JPanel p_add2;
     private javax.swing.JPanel p_add3;
     private javax.swing.JPanel p_add5;
+    private javax.swing.JTable tbl_movies;
     private javax.swing.JLabel time;
     // End of variables declaration//GEN-END:variables
 }

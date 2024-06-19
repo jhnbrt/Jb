@@ -5,15 +5,19 @@
  */
 package user_dashboard;
 
+import config.dbconnector;
 import config.session;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import jb.loginform;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -24,6 +28,7 @@ public class user_dashboard extends javax.swing.JFrame {
     
     public user_dashboard() {
         initComponents();
+        displayData();
         date();
         time();
     }
@@ -67,10 +72,6 @@ public class user_dashboard extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         ctime = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
         cdate = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         p_add1 = new javax.swing.JPanel();
@@ -86,9 +87,7 @@ public class user_dashboard extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tbl_movies = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,45 +98,13 @@ public class user_dashboard extends javax.swing.JFrame {
         ctime.setForeground(new java.awt.Color(255, 255, 255));
         ctime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ctime.setText("00:00:00");
-        jPanel1.add(ctime, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 100, -1));
-
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("SEARCH:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, -1, -1));
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.white, java.awt.Color.black, java.awt.Color.lightGray));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 192, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 21, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Now Showing:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, -1, -1));
-
-        jLabel24.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel24.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("Upcoming Movies:");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
+        jPanel1.add(ctime, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 100, -1));
 
         cdate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cdate.setForeground(new java.awt.Color(255, 255, 255));
         cdate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cdate.setText("Month/Day/Year");
-        jPanel1.add(cdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
+        jPanel1.add(cdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -305,7 +272,7 @@ public class user_dashboard extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 550));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_movies.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -316,24 +283,9 @@ public class user_dashboard extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbl_movies);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 620, 100));
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 620, 250));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 620, 230));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -351,6 +303,20 @@ public class user_dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+     public void displayData(){
+        try{
+            dbconnector connector = new dbconnector();
+            ResultSet rs = connector.getData("SELECT m_id, title, director,genre,r_year,run_time,"
+                    + "movie_status FROM tbl_movies WHERE movie_status = 'Active'");
+            tbl_movies.setModel(DbUtils.resultSetToTableModel(rs));
+             rs.close();
+        }catch(SQLException ex){
+            System.out.println("Errors: "+ex.getMessage());
+        
+        }
+    }
+    
+    
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
         user_IssuedTicket ads = new user_IssuedTicket();
         ads.setVisible(true);
@@ -497,21 +463,15 @@ public class user_dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JPanel p_add1;
     private javax.swing.JPanel p_add2;
     private javax.swing.JPanel p_add5;
     private javax.swing.JPanel p_add7;
+    private javax.swing.JTable tbl_movies;
     // End of variables declaration//GEN-END:variables
 }

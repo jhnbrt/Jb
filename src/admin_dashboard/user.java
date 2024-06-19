@@ -454,7 +454,7 @@ public class user extends javax.swing.JFrame {
     }//GEN-LAST:event_p_add3MouseExited
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
-        IssuedTicket ue = new IssuedTicket();
+        Tickets ue = new Tickets();
         ue.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel16MouseClicked
