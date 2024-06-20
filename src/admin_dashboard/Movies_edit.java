@@ -52,6 +52,7 @@ public class Movies_edit extends javax.swing.JFrame {
         moviestatus = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        cinema = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -228,6 +229,9 @@ public class Movies_edit extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/filmdoodle.jpg"))); // NOI18N
         panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 380));
 
+        cinema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        panel.add(cinema, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 120, 30));
+
         getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 380));
 
         pack();
@@ -396,6 +400,7 @@ if (dbc.insertData("INSERT INTO tbl_movies (title, r_year, genre, run_time, dire
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton addBT;
     public javax.swing.JButton cancel;
+    private javax.swing.JComboBox<String> cinema;
     private javax.swing.JButton delete;
     public javax.swing.JTextField director;
     public javax.swing.JTextField genre;

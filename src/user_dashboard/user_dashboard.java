@@ -351,7 +351,7 @@ public class user_dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_p_add5MouseClicked
 
     private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
-        user_reservation ads = new user_reservation();
+        user_booking ads = new user_booking();
         ads.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel30MouseClicked

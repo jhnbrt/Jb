@@ -5,21 +5,28 @@
  */
 package user_dashboard;
 
+import config.dbconnector;
 import java.awt.Color;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import jb.loginform;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
  * @author Dela Cuesta
  */
-public class user_reservation extends javax.swing.JFrame {
+public class user_booking extends javax.swing.JFrame {
 
     /**
      * Creates new form user_reservation
      */
-    public user_reservation() {
+    public user_booking() {
         initComponents();
+        cb();
     }
     Color navcolor =  new Color(204,204,204);
     Color hovercolor =  new Color(0,0,0);
@@ -51,6 +58,25 @@ public class user_reservation extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        m_id = new javax.swing.JComboBox<>();
+        qty = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        date = new javax.swing.JLabel();
+        cinema = new javax.swing.JLabel();
+        run_time = new javax.swing.JLabel();
+        r_year = new javax.swing.JLabel();
+        genre = new javax.swing.JLabel();
+        director = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,6 +92,11 @@ public class user_reservation extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
@@ -204,7 +235,7 @@ public class user_reservation extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-ticket-purchase-30.png"))); // NOI18N
-        jLabel19.setText("RESERVATION");
+        jLabel19.setText("BOOKING");
         jLabel19.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel19MouseClicked(evt);
@@ -292,33 +323,148 @@ public class user_reservation extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 570));
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 204, 0));
-        jLabel2.setText("TICKETS");
+        jLabel2.setText("BOOKING");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(427, 11, 118, 29);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(472, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(253, 253, 253))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(545, Short.MAX_VALUE))
-        );
+        m_id.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                m_idItemStateChanged(evt);
+            }
+        });
+        jPanel1.add(m_id);
+        m_id.setBounds(230, 170, 120, 30);
+        jPanel1.add(qty);
+        qty.setBounds(230, 220, 120, 30);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, -1));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setForeground(new java.awt.Color(255, 204, 204));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("CINEMA");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 50));
+
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 36)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("WAVE");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 120, 50));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setText("Date:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 40, 20));
+
+        title.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 36)); // NOI18N
+        title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel3.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 40));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setText("Release Year:");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, 20));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setText("Genre:");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setText("Run Time:");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setText("Director:");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, 20));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setText("Cinema:");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel3.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 210, 20));
+
+        cinema.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel3.add(cinema, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 200, -1));
+
+        run_time.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel3.add(run_time, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 190, -1));
+
+        r_year.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel3.add(r_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 170, 160, 20));
+
+        genre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel3.add(genre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 210, -1));
+
+        director.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel3.add(director, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 200, 20));
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(490, 110, 280, 260);
+
+        jButton1.setText("Generate Ticket");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(230, 290, 220, 40);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void cb(){
+        dbconnector connect = new dbconnector();
+        
+        try {
+            m_id.addItem("");
+            ResultSet rs = connect.getData("SELECT * FROM tbl_movies");
+            while(rs.next()){
+                m_id.addItem(rs.getString("m_id"));
+           
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
+    
+     public void displayData(){
+        Date d = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd,yyyy");
+        date.setText(sdf.format(d));
+            try{
+                dbconnector connector = new dbconnector();
+                ResultSet rs = connector.getData("SELECT * FROM tbl_movies m JOIN tbl_cinema c ON tbl_cinema = c_id WHERE m.m_id = "+ m_id.getSelectedItem());
+                if(rs.next()){
+                    title.setText(rs.getString("m.title"));
+                    cinema.setText(rs.getString("c.c_name"));
+                    run_time.setText(rs.getString("m.run_time"));
+                    r_year.setText(rs.getString("m.r_year"));
+                    director.setText(rs.getString("m.director"));
+                    genre.setText(rs.getString("m.genre"));
+
+
+
+                }
+                 rs.close();
+            }catch(SQLException ex){
+                System.out.println("Errors: "+ex.getMessage());
+
+            }
+        
+        
+    }
+    
+    
+    
+    
     private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel19MouseClicked
@@ -418,6 +564,22 @@ public class user_reservation extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabel16MouseClicked
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+       
+    }//GEN-LAST:event_formWindowActivated
+
+    private void m_idItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_m_idItemStateChanged
+
+    }//GEN-LAST:event_m_idItemStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(qty.getText().isEmpty()||m_id.getSelectedItem().equals("")){
+            JOptionPane.showMessageDialog(null, "Please Fill-up all fields!");
+        }else{
+            displayData();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -435,43 +597,63 @@ public class user_reservation extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(user_reservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(user_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(user_reservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(user_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(user_reservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(user_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(user_reservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(user_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new user_reservation().setVisible(true);
+                new user_booking().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adminName;
+    private javax.swing.JLabel cinema;
+    private javax.swing.JLabel date;
+    private javax.swing.JLabel director;
+    private javax.swing.JLabel genre;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JComboBox<String> m_id;
     private javax.swing.JPanel p_add1;
     private javax.swing.JPanel p_add2;
     private javax.swing.JPanel p_add5;
     private javax.swing.JPanel p_add6;
     private javax.swing.JPanel p_add7;
+    private javax.swing.JTextField qty;
+    private javax.swing.JLabel r_year;
+    private javax.swing.JLabel run_time;
+    private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
