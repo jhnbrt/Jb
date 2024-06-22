@@ -53,12 +53,17 @@ public class Movies_edit extends javax.swing.JFrame {
         moviestatus = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        cinema = new javax.swing.JComboBox<>();
+        c_name = new javax.swing.JComboBox<>();
         genre = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel.setBackground(new java.awt.Color(0, 0, 0));
@@ -233,15 +238,15 @@ public class Movies_edit extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/filmdoodle.jpg"))); // NOI18N
         panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 380));
 
-        cinema.setBackground(new java.awt.Color(153, 153, 153));
-        cinema.setForeground(new java.awt.Color(255, 255, 255));
-        cinema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Cinema", "C1", "C2", "C3", "C4" }));
-        cinema.addMouseListener(new java.awt.event.MouseAdapter() {
+        c_name.setBackground(new java.awt.Color(153, 153, 153));
+        c_name.setForeground(new java.awt.Color(255, 255, 255));
+        c_name.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Cinema", "C1", "C2", "C3", "C4" }));
+        c_name.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cinemaMouseClicked(evt);
+                c_nameMouseClicked(evt);
             }
         });
-        panel.add(cinema, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 120, 30));
+        panel.add(c_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 120, 30));
 
         genre.setBackground(new java.awt.Color(102, 102, 102));
         genre.setFont(new java.awt.Font("Yu Gothic UI", 0, 10)); // NOI18N
@@ -294,9 +299,9 @@ public class Movies_edit extends javax.swing.JFrame {
 } else {
     dbconnector dbc = new dbconnector();
 
-    // Extract the numeric part of the cinema ID
-    String selectedCinema = cinema.getSelectedItem().toString();
-    String cinemaIdStr = selectedCinema.replaceAll("[^0-9]", ""); // Remove non-numeric characters
+   
+    String selectedCinema = c_name.getSelectedItem().toString();
+    String cinemaIdStr = selectedCinema.replaceAll("[^0-9]", ""); 
     int cinemaId = Integer.parseInt(cinemaIdStr);
 
    String insertQuery = "INSERT INTO tbl_movies (title, r_year, genre, run_time, director, movie_status, c_id, m_price) "
@@ -403,13 +408,17 @@ public class Movies_edit extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_moviestatusActionPerformed
 
-    private void cinemaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cinemaMouseClicked
+    private void c_nameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c_nameMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_cinemaMouseClicked
+    }//GEN-LAST:event_c_nameMouseClicked
 
     private void genreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_genreActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -448,8 +457,8 @@ public class Movies_edit extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton addBT;
+    private javax.swing.JComboBox<String> c_name;
     public javax.swing.JButton cancel;
-    private javax.swing.JComboBox<String> cinema;
     private javax.swing.JButton delete;
     public javax.swing.JTextField director;
     public javax.swing.JTextField genre;

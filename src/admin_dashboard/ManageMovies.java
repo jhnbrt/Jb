@@ -6,9 +6,13 @@
 package admin_dashboard;
 
 import config.dbconnector;
+import config.session;
 import java.awt.Color;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.TableModel;
@@ -205,6 +209,11 @@ public class ManageMovies extends javax.swing.JFrame {
         viewPanel.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 660, 10));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -424,7 +433,7 @@ public class ManageMovies extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("MANAGE MOVIES");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
 
@@ -614,21 +623,22 @@ public class ManageMovies extends javax.swing.JFrame {
 
         jPanel3.add(p_add16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 411, -1, -1));
 
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-admin-50.png"))); // NOI18N
         jLabel11.setText("admin");
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 60, -1));
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 170, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("ADMIN");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, 17));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 110, 200, 17));
 
         adminName1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        adminName1.setForeground(new java.awt.Color(255, 255, 255));
+        adminName1.setForeground(new java.awt.Color(255, 0, 0));
         adminName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminName1.setText("Name");
-        jPanel3.add(adminName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, 31));
+        adminName1.setText("Full Name");
+        jPanel3.add(adminName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 31));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
@@ -887,6 +897,13 @@ public class ManageMovies extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel20MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+         session sess = session.getInstance();
+        
+        int userId = sess.getUid();
+        
+        logEvent(userId, "LOGOUT", "Admin logged out");
+        
+        
         loginform ads = new loginform();
         JOptionPane.showMessageDialog(null,"Logout Success!");
         ads.setVisible(true);
@@ -975,9 +992,60 @@ if (rowIndex < 0) {
         }
     }//GEN-LAST:event_editActionPerformed
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+       session sess = session.getInstance();
+
+        if(sess.getUid() == 0){
+            JOptionPane.showMessageDialog(null, "No Account, Log in First! ","Notice", JOptionPane.ERROR_MESSAGE);
+            loginform ads = new loginform();
+            ads.setVisible(true);
+            this.dispose();
+        }else{
+            adminName.setText(sess.getFname() + " " + sess.getLname());
+            try{
+                dbconnector dbc = new dbconnector();
+                ResultSet rs = dbc.getData("SELECT * FROM tbl_u WHERE u_id = '"+sess.getUid()+"'");
+
+                if(rs.next()){
+
+                }
+
+            }catch(SQLException ex){
+                System.out.println(""+ex);
+
+            }
+
+        }
+    }//GEN-LAST:event_formWindowActivated
+
     /**
      * @param args the command line arguments
      */
+    
+     public void logEvent(int userId, String event, String description) {
+   
+        dbconnector dbc = new dbconnector();
+        PreparedStatement pstmt = null;
+        
+    try {
+     
+
+        String sql = "INSERT INTO tbl_logs (log_timestamp, log_event, u_id, log_descript) VALUES (?, ?, ?, ?)";
+        pstmt = dbc.connect.prepareStatement(sql);
+        pstmt.setTimestamp(1, new Timestamp(new Date().getTime()));
+        pstmt.setString(2, event);
+        pstmt.setInt(3, userId);
+        pstmt.setString(4, description);
+
+        pstmt.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+       
+    }
+    
+ }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

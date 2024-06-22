@@ -10,8 +10,10 @@ import config.session;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -80,7 +82,7 @@ public class user_dashboard extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         cashierName = new javax.swing.JLabel();
-        adminName = new javax.swing.JLabel();
+        cashiername = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         p_add7 = new javax.swing.JPanel();
         p_add5 = new javax.swing.JPanel();
@@ -90,6 +92,11 @@ public class user_dashboard extends javax.swing.JFrame {
         tbl_movies = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -177,21 +184,22 @@ public class user_dashboard extends javax.swing.JFrame {
 
         jPanel2.add(p_add2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 225, 196, 41));
 
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-admin-50.png"))); // NOI18N
         jLabel7.setText("admin");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 52, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 170, -1));
 
         cashierName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cashierName.setForeground(new java.awt.Color(255, 255, 255));
         cashierName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cashierName.setText("CASHIER");
-        jPanel2.add(cashierName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, 17));
+        jPanel2.add(cashierName, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 200, 17));
 
-        adminName.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        adminName.setForeground(new java.awt.Color(255, 255, 255));
-        adminName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminName.setText("Name");
-        jPanel2.add(adminName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, 31));
+        cashiername.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        cashiername.setForeground(new java.awt.Color(255, 0, 0));
+        cashiername.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cashiername.setText("Name");
+        jPanel2.add(cashiername, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 200, 31));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
@@ -319,7 +327,7 @@ public class user_dashboard extends javax.swing.JFrame {
     
     
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
-        user_IssuedTicket ads = new user_IssuedTicket();
+        user_Ticket ads = new user_Ticket();
         ads.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel16MouseClicked
@@ -346,7 +354,7 @@ public class user_dashboard extends javax.swing.JFrame {
 
     private void p_add5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add5MouseClicked
 
-        user_IssuedTicket ads = new user_IssuedTicket();
+        user_Ticket ads = new user_Ticket();
         ads.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_p_add5MouseClicked
@@ -358,6 +366,13 @@ public class user_dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel30MouseClicked
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+        session sess = session.getInstance();
+        
+        int userId = sess.getUid();
+        
+        logEvent(userId, "LOGOUT", "User logged out");
+        
+        
         loginform ads = new loginform();
         JOptionPane.showMessageDialog(null,"Logout Success!");
         ads.setVisible(true);
@@ -404,25 +419,68 @@ public class user_dashboard extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_p_add1MouseClicked
 
-     private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
-        session sess = session.getInstance();
-        
-        if (sess.getUid() == 0){
-            JOptionPane.showMessageDialog(null,"No account, Login First!");
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+                                    
+       session sess = session.getInstance();
+
+        if(sess.getUid() == 0){
+            JOptionPane.showMessageDialog(null, "No Account, Log in First! ","Notice", JOptionPane.ERROR_MESSAGE);
             loginform ads = new loginform();
             ads.setVisible(true);
             this.dispose();
         }else{
-            cashierName.setText(""+sess.getFname());
-            
+            cashiername.setText(sess.getFname() + " " + sess.getLname());
+            try{
+                dbconnector dbc = new dbconnector();
+                ResultSet rs = dbc.getData("SELECT * FROM tbl_u WHERE u_id = '"+sess.getUid()+"'");
+
+                if(rs.next()){
+
+                }
+
+            }catch(SQLException ex){
+                System.out.println(""+ex);
+
+            }
+
+        }
+
         
-        } 
-    }        
+        
+          
+    }//GEN-LAST:event_formWindowActivated
+
+      
     
     
     /**
      * @param args the command line arguments
      */
+    
+    public void logEvent(int userId, String event, String description) {
+   
+        dbconnector dbc = new dbconnector();
+        PreparedStatement pstmt = null;
+        
+    try {
+     
+
+        String sql = "INSERT INTO tbl_logs (log_timestamp, log_event, u_id, log_descript) VALUES (?, ?, ?, ?)";
+        pstmt = dbc.connect.prepareStatement(sql);
+        pstmt.setTimestamp(1, new Timestamp(new Date().getTime()));
+        pstmt.setString(2, event);
+        pstmt.setInt(3, userId);
+        pstmt.setString(4, description);
+
+        pstmt.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+       
+    }
+    
+ }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -456,8 +514,8 @@ public class user_dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel adminName;
     private javax.swing.JLabel cashierName;
+    private javax.swing.JLabel cashiername;
     private javax.swing.JLabel cdate;
     private javax.swing.JLabel ctime;
     private javax.swing.JLabel jLabel12;

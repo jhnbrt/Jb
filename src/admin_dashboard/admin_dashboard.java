@@ -271,21 +271,22 @@ public class admin_dashboard extends javax.swing.JFrame {
 
         jPanel2.add(p_add15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 411, -1, -1));
 
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-admin-50.png"))); // NOI18N
         jLabel10.setText("admin");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 50, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 170, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ADMIN");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, 20));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 200, 20));
 
         adminName.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         adminName.setForeground(new java.awt.Color(255, 51, 51));
         adminName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         adminName.setText("Full Name");
-        jPanel2.add(adminName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 120, 31));
+        jPanel2.add(adminName, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 200, 31));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
@@ -404,7 +405,7 @@ public class admin_dashboard extends javax.swing.JFrame {
         
         int userId = sess.getUid();
         
-        logEvent(userId, "LOGOUT", "User logged out");
+        logEvent(userId, "LOGOUT", "Admin logged out");
         
         
         loginform ads = new loginform();
@@ -507,7 +508,9 @@ public class admin_dashboard extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
-     */ public void logEvent(int userId, String event, String description) {
+     */ 
+    
+    public void logEvent(int userId, String event, String description) {
    
         dbconnector dbc = new dbconnector();
         PreparedStatement pstmt = null;

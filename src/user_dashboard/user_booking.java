@@ -7,9 +7,13 @@ package user_dashboard;
 
 import config.PanelPrinter;
 import config.dbconnector;
+import config.session;
 import java.awt.Color;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.TableModel;
@@ -80,7 +84,6 @@ public class user_booking extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         m_price1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
         p_add1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         p_add2 = new javax.swing.JPanel();
@@ -88,7 +91,7 @@ public class user_booking extends javax.swing.JFrame {
         p_add6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        adminName = new javax.swing.JLabel();
+        cashiername = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         p_add7 = new javax.swing.JPanel();
         p_add5 = new javax.swing.JPanel();
@@ -267,14 +270,7 @@ public class user_booking extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(72, 149, 239));
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
-            }
-        });
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         p_add1.setBackground(new java.awt.Color(0, 0, 0));
         p_add1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -296,7 +292,9 @@ public class user_booking extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-dashboard-24 (1).png"))); // NOI18N
         jLabel8.setText("DASHBOARD");
         p_add1.add(jLabel8);
-        jLabel8.setBounds(-10, 0, 190, 40);
+        jLabel8.setBounds(0, 0, 190, 40);
+
+        jPanel2.add(p_add1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 178, 190, 41));
 
         p_add2.setBackground(new java.awt.Color(0, 0, 0));
         p_add2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -329,7 +327,9 @@ public class user_booking extends javax.swing.JFrame {
             }
         });
         p_add2.add(jLabel13);
-        jLabel13.setBounds(0, 0, 190, 40);
+        jLabel13.setBounds(-10, 0, 190, 40);
+
+        jPanel2.add(p_add2, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 225, 186, 41));
 
         p_add6.setBackground(new java.awt.Color(0, 0, 0));
         p_add6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -344,19 +344,23 @@ public class user_booking extends javax.swing.JFrame {
             }
         });
         p_add6.setLayout(null);
+        jPanel2.add(p_add6, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 456, 196, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-admin-50.png"))); // NOI18N
         jLabel7.setText("admin");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 52, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CASHIER");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 90, -1, 17));
 
-        adminName.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        adminName.setForeground(new java.awt.Color(255, 255, 255));
-        adminName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adminName.setText("Name");
+        cashiername.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        cashiername.setForeground(new java.awt.Color(255, 0, 0));
+        cashiername.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cashiername.setText("Name");
+        jPanel2.add(cashiername, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 190, 31));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
@@ -368,6 +372,7 @@ public class user_booking extends javax.swing.JFrame {
                 jLabel18MouseClicked(evt);
             }
         });
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 359, 186, 40));
 
         p_add7.setBackground(new java.awt.Color(0, 0, 0));
         p_add7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -408,10 +413,12 @@ public class user_booking extends javax.swing.JFrame {
             }
         });
         p_add5.add(jLabel19);
-        jLabel19.setBounds(-10, 0, 190, 40);
+        jLabel19.setBounds(-20, 0, 190, 40);
 
         p_add7.add(p_add5);
         p_add5.setBounds(0, 0, 176, 40);
+
+        jPanel2.add(p_add7, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 313, 176, 40));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -423,68 +430,7 @@ public class user_booking extends javax.swing.JFrame {
                 jLabel16MouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel10)
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(adminName))
-                            .addComponent(jLabel1)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(p_add1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(p_add2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(p_add7, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(p_add6, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(6, 6, 6))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel7)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(adminName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(47, 47, 47)
-                .addComponent(p_add1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(p_add2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(p_add7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(p_add6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 190, 40));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 570));
 
@@ -496,7 +442,7 @@ public class user_booking extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("BOOKING");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(188, 50, 640, 29);
+        jLabel2.setBounds(190, 40, 630, 29);
 
         tbl_movies.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -520,7 +466,7 @@ public class user_booking extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbl_movies);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(220, 110, 590, 230);
+        jScrollPane1.setBounds(220, 90, 590, 230);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 570));
 
@@ -581,7 +527,9 @@ public class user_booking extends javax.swing.JFrame {
    
     
     private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
-        // TODO add your handling code here:
+      user_booking ads = new user_booking();
+        ads.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel19MouseClicked
 
     private void p_add7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add7MouseExited
@@ -606,12 +554,19 @@ public class user_booking extends javax.swing.JFrame {
 
     private void p_add5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add5MouseClicked
 
-        user_IssuedTicket ads = new user_IssuedTicket();
+        user_Ticket ads = new user_Ticket();
         ads.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_p_add5MouseClicked
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+        session sess = session.getInstance();
+        
+        int userId = sess.getUid();
+        
+        logEvent(userId, "LOGOUT", "User logged out");
+        
+        
         loginform ads = new loginform();
         JOptionPane.showMessageDialog(null,"Logout Success!");
         ads.setVisible(true);
@@ -654,7 +609,9 @@ public class user_booking extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel13MouseEntered
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
-        p_add1.setBackground(hovercolor);
+        user_Reports ads = new user_Reports ();
+        ads.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void p_add1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p_add1MouseExited
@@ -671,15 +628,36 @@ public class user_booking extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_p_add1MouseClicked
 
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel10MouseClicked
-
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
-
+        user_Ticket ads = new user_Ticket();
+        ads.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel16MouseClicked
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+session sess = session.getInstance();
+
+        if(sess.getUid() == 0){
+            JOptionPane.showMessageDialog(null, "No Account, Log in First! ","Notice", JOptionPane.ERROR_MESSAGE);
+            loginform ads = new loginform();
+            ads.setVisible(true);
+            this.dispose();
+        }else{
+            cashiername.setText(sess.getFname() + " " + sess.getLname());
+            try{
+                dbconnector dbc = new dbconnector();
+                ResultSet rs = dbc.getData("SELECT * FROM tbl_u WHERE u_id = '"+sess.getUid()+"'");
+
+                if(rs.next()){
+
+                }
+
+            }catch(SQLException ex){
+                System.out.println(""+ex);
+
+            }
+
+        }
        
     }//GEN-LAST:event_formWindowActivated
 
@@ -746,6 +724,31 @@ if (rowIndex < 0) {
     /**
      * @param args the command line arguments
      */
+    
+    public void logEvent(int userId, String event, String description) {
+   
+        dbconnector dbc = new dbconnector();
+        PreparedStatement pstmt = null;
+        
+    try {
+     
+
+        String sql = "INSERT INTO tbl_logs (log_timestamp, log_event, u_id, log_descript) VALUES (?, ?, ?, ?)";
+        pstmt = dbc.connect.prepareStatement(sql);
+        pstmt.setTimestamp(1, new Timestamp(new Date().getTime()));
+        pstmt.setString(2, event);
+        pstmt.setInt(3, userId);
+        pstmt.setString(4, description);
+
+        pstmt.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+       
+    }
+    
+ }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -781,16 +784,15 @@ if (rowIndex < 0) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button Reserve;
-    private javax.swing.JLabel adminName;
     private javax.swing.JPanel book;
     private java.awt.Button booknow;
     private javax.swing.JLabel c_name;
+    private javax.swing.JLabel cashiername;
     private javax.swing.JLabel director;
     private javax.swing.JLabel genre;
     public javax.swing.JLabel image;
     private javax.swing.JPanel imagePanel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
