@@ -44,6 +44,26 @@ public class ManageMovies extends javax.swing.JFrame {
         popUp = new javax.swing.JPopupMenu();
         view = new javax.swing.JMenuItem();
         edit = new javax.swing.JMenuItem();
+        viewPanel = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        c_name = new javax.swing.JLabel();
+        m_price = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
+        r_year = new javax.swing.JLabel();
+        genre = new javax.swing.JLabel();
+        imagePanel = new javax.swing.JPanel();
+        image = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        runtime = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        director = new javax.swing.JLabel();
+        m_status = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         p_add = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -97,6 +117,92 @@ public class ManageMovies extends javax.swing.JFrame {
             }
         });
         popUp.add(edit);
+
+        viewPanel.setBackground(new java.awt.Color(255, 255, 255));
+        viewPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(27, 57, 77)));
+        viewPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel24.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel24.setText("Movie Price:");
+        viewPanel.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 80, 20));
+
+        c_name.setText("Cinema Name");
+        viewPanel.add(c_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 120, 20));
+
+        m_price.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        m_price.setForeground(new java.awt.Color(27, 57, 77));
+        m_price.setText("Movie Price");
+        viewPanel.add(m_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 150, 20));
+
+        jLabel22.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel22.setText("Release Year:");
+        viewPanel.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 80, 20));
+
+        title.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title.setText("Movie Title");
+        viewPanel.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 170, 40));
+
+        r_year.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        r_year.setForeground(new java.awt.Color(27, 57, 77));
+        r_year.setText("Release Year");
+        viewPanel.add(r_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 170, 20));
+
+        genre.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        genre.setForeground(new java.awt.Color(27, 57, 77));
+        genre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        genre.setText("Genre");
+        viewPanel.add(genre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 160, 20));
+
+        imagePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(27, 57, 77)));
+        imagePanel.add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 170));
+
+        viewPanel.add(imagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 170, 170));
+
+        jPanel5.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel25.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("  Movie Details");
+        jPanel5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 470, 50));
+
+        viewPanel.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 50));
+
+        jLabel26.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel26.setText("Run Time:");
+        viewPanel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 70, 20));
+
+        runtime.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        runtime.setForeground(new java.awt.Color(27, 57, 77));
+        runtime.setText("Run Time");
+        viewPanel.add(runtime, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 70, 20));
+
+        jLabel30.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel30.setText("Director:");
+        viewPanel.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 80, 20));
+
+        jLabel27.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel27.setText("Status:");
+        viewPanel.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 80, 20));
+
+        jLabel28.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel28.setText("Cinema:");
+        viewPanel.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 80, 20));
+
+        director.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        director.setForeground(new java.awt.Color(27, 57, 77));
+        director.setText("Director Name");
+        viewPanel.add(director, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 150, 20));
+
+        m_status.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        m_status.setForeground(new java.awt.Color(27, 57, 77));
+        m_status.setText("Status");
+        viewPanel.add(m_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 100, 20));
+        viewPanel.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 660, 10));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -582,7 +688,7 @@ public class ManageMovies extends javax.swing.JFrame {
     public void displayData(){
         try{
             dbconnector connector = new dbconnector();
-            ResultSet rs = connector.getData("SELECT m_id, title, director,genre,r_year,run_time,"
+            ResultSet rs = connector.getData("SELECT m_id, title,genre,run_time,m_price,"
                     + "movie_status FROM tbl_movies WHERE movie_status = 'Active'");
             tbl_movies.setModel(DbUtils.resultSetToTableModel(rs));
              rs.close();
@@ -806,6 +912,36 @@ public class ManageMovies extends javax.swing.JFrame {
     }//GEN-LAST:event_tbl_moviesMouseClicked
 
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
+int rowIndex = tbl_movies.getSelectedRow();
+
+if (rowIndex < 0) {
+    JOptionPane.showMessageDialog(null, "Please select an Item!");
+} else {
+    try {
+        dbconnector connector = new dbconnector();
+        TableModel tbl = tbl_movies.getModel();
+        ResultSet resultSet = connector.getData("SELECT m.*, c.c_name FROM tbl_movies m JOIN tbl_cinema c ON m.c_id = c.c_id WHERE m.m_id = '" + tbl.getValueAt(rowIndex, 0) + "'");
+
+        if (resultSet.next()) {
+            title.setText(resultSet.getString("title"));
+            genre.setText(resultSet.getString("genre"));
+            c_name.setText(resultSet.getString("c_name"));
+            r_year.setText(resultSet.getString("r_year"));
+            m_price.setText(resultSet.getString("m_price"));
+            runtime.setText(resultSet.getString("run_time"));
+            director.setText(resultSet.getString("director"));
+            m_status.setText(resultSet.getString("movie_status"));
+            
+            JOptionPane.showOptionDialog(null, viewPanel, "",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
+                null, new Object[]{}, null);
+        }
+
+        resultSet.close();
+    } catch (SQLException ex) {
+        System.out.println("Error: " + ex.getMessage());
+    }
+}
 
     }//GEN-LAST:event_viewActionPerformed
 
@@ -822,15 +958,14 @@ public class ManageMovies extends javax.swing.JFrame {
                 ResultSet resultSet = connector.getData("SELECT * FROM tbl_movies WHERE m_id = '"+tbl.getValueAt(rowIndex, 0)+"'");
                 if(resultSet.next()){
                     Movies_edit ur = new Movies_edit();
-                    ur.mID.setText(""+resultSet.getInt("m_id"));
+                    ur.mID.setText(""+resultSet.getString("m_id"));
                     ur.title.setText(""+resultSet.getString("title"));
-                    ur.r_year.setText(""+resultSet.getString("r_year"));
                     ur.genre.setText(""+resultSet.getString("genre"));
+                    ur.r_year.setText(""+resultSet.getString("r_year"));
+                    ur.m_price.setText(""+resultSet.getString("m_price"));
                     ur.runtime.setText(""+resultSet.getString("run_time"));
                     ur.director.setText(""+resultSet.getString("director"));
-                    ur.addBT.setEnabled(false);
-                    ur.update.setEnabled(true);
-                    ur.setVisible(true);
+                  ur.setVisible(true);
                     this.dispose();
 
                 }
@@ -879,7 +1014,12 @@ public class ManageMovies extends javax.swing.JFrame {
     public javax.swing.JButton add;
     private javax.swing.JLabel adminName;
     private javax.swing.JLabel adminName1;
+    private javax.swing.JLabel c_name;
+    private javax.swing.JLabel director;
     private javax.swing.JMenuItem edit;
+    private javax.swing.JLabel genre;
+    public javax.swing.JLabel image;
+    private javax.swing.JPanel imagePanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -892,7 +1032,15 @@ public class ManageMovies extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
@@ -902,7 +1050,10 @@ public class ManageMovies extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel m_price;
+    private javax.swing.JLabel m_status;
     private javax.swing.JPanel p_add;
     private javax.swing.JPanel p_add1;
     private javax.swing.JPanel p_add15;
@@ -914,7 +1065,11 @@ public class ManageMovies extends javax.swing.JFrame {
     private javax.swing.JPanel p_add6;
     private javax.swing.JPanel p_add7;
     private javax.swing.JPopupMenu popUp;
+    private javax.swing.JLabel r_year;
+    private javax.swing.JLabel runtime;
     private javax.swing.JTable tbl_movies;
+    public javax.swing.JLabel title;
     private javax.swing.JMenuItem view;
+    private javax.swing.JPanel viewPanel;
     // End of variables declaration//GEN-END:variables
 }

@@ -359,7 +359,7 @@ public class admin_dashboard extends javax.swing.JFrame {
     public void displayData(){
         try{
             dbconnector connector = new dbconnector();
-            ResultSet rs = connector.getData("SELECT m_id, title, director,genre,r_year,run_time,"
+            ResultSet rs = connector.getData("SELECT m_id, title,genre,run_time,m_price,"
                     + "movie_status FROM tbl_movies WHERE movie_status = 'Active'");
             tbl_movies.setModel(DbUtils.resultSetToTableModel(rs));
              rs.close();

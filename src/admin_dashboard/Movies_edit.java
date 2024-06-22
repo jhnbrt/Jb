@@ -7,6 +7,7 @@ package admin_dashboard;
 
 import config.dbconnector;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -35,7 +36,7 @@ public class Movies_edit extends javax.swing.JFrame {
         panel = new javax.swing.JPanel();
         title = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        genre = new javax.swing.JTextField();
+        m_price = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         r_year = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -53,6 +54,9 @@ public class Movies_edit extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         cinema = new javax.swing.JComboBox<>();
+        genre = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,20 +80,20 @@ public class Movies_edit extends javax.swing.JFrame {
         jLabel4.setText("Movie Status");
         panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 90, -1, -1));
 
-        genre.setBackground(new java.awt.Color(102, 102, 102));
-        genre.setFont(new java.awt.Font("Yu Gothic UI", 0, 10)); // NOI18N
-        genre.setForeground(new java.awt.Color(255, 255, 255));
-        genre.addActionListener(new java.awt.event.ActionListener() {
+        m_price.setBackground(new java.awt.Color(102, 102, 102));
+        m_price.setFont(new java.awt.Font("Yu Gothic UI", 0, 10)); // NOI18N
+        m_price.setForeground(new java.awt.Color(255, 255, 255));
+        m_price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genreActionPerformed(evt);
+                m_priceActionPerformed(evt);
             }
         });
-        panel.add(genre, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 120, 30));
+        panel.add(m_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 120, 30));
 
         jLabel7.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Genre:");
-        panel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, -1, 20));
+        jLabel7.setText("Price:");
+        panel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, -1, 20));
 
         r_year.setBackground(new java.awt.Color(102, 102, 102));
         r_year.setFont(new java.awt.Font("Yu Gothic UI", 0, 10)); // NOI18N
@@ -229,8 +233,35 @@ public class Movies_edit extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/filmdoodle.jpg"))); // NOI18N
         panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 380));
 
-        cinema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cinema.setBackground(new java.awt.Color(153, 153, 153));
+        cinema.setForeground(new java.awt.Color(255, 255, 255));
+        cinema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Cinema", "C1", "C2", "C3", "C4" }));
+        cinema.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cinemaMouseClicked(evt);
+            }
+        });
         panel.add(cinema, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 120, 30));
+
+        genre.setBackground(new java.awt.Color(102, 102, 102));
+        genre.setFont(new java.awt.Font("Yu Gothic UI", 0, 10)); // NOI18N
+        genre.setForeground(new java.awt.Color(255, 255, 255));
+        genre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                genreActionPerformed(evt);
+            }
+        });
+        panel.add(genre, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 120, 30));
+
+        jLabel11.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Genre:");
+        panel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, -1, 20));
+
+        jLabel12.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Cinema:");
+        panel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, 20));
 
         getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 380));
 
@@ -242,9 +273,9 @@ public class Movies_edit extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_titleActionPerformed
 
-    private void genreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genreActionPerformed
+    private void m_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_priceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_genreActionPerformed
+    }//GEN-LAST:event_m_priceActionPerformed
 
     private void r_yearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_yearActionPerformed
         // TODO add your handling code here:
@@ -256,32 +287,41 @@ public class Movies_edit extends javax.swing.JFrame {
 
     private void addBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTActionPerformed
 
-        if(title.getText().isEmpty() || genre.getText().isEmpty() || runtime.getText().isEmpty()
-            || r_year.getText().isEmpty() || director.getText().isEmpty ())
-        {
+        if (title.getText().isEmpty() || m_price.getText().isEmpty() || runtime.getText().isEmpty()
+        || r_year.getText().isEmpty() || director.getText().isEmpty()) {
 
-            JOptionPane.showMessageDialog(null,"All fields are required!");        }
-        else{
-            dbconnector dbc = new dbconnector();
-
-
-if (dbc.insertData("INSERT INTO tbl_movies (title, r_year, genre, run_time, director,movie_status) "
-        + "VALUES ('" + title.getText()+"','" + r_year.getText() + "','" 
-        + genre.getText() + "','" + runtime.getText() + "','" 
-        + director.getText() + "','" + moviestatus.getSelectedItem() + "')")) {
-
-  JOptionPane.showMessageDialog(null, "Movie added successfully!");
-  ManageMovies rA = new ManageMovies();
-  rA.setVisible(true);
-  this.dispose();
-
+    JOptionPane.showMessageDialog(null, "All fields are required!");
 } else {
- 
-  JOptionPane.showMessageDialog(null, "Error adding movie!");
+    dbconnector dbc = new dbconnector();
+
+    // Extract the numeric part of the cinema ID
+    String selectedCinema = cinema.getSelectedItem().toString();
+    String cinemaIdStr = selectedCinema.replaceAll("[^0-9]", ""); // Remove non-numeric characters
+    int cinemaId = Integer.parseInt(cinemaIdStr);
+
+   String insertQuery = "INSERT INTO tbl_movies (title, r_year, genre, run_time, director, movie_status, c_id, m_price) "
+        + "VALUES ('"
+        + title.getText() + "','"
+        + r_year.getText() + "','"
+        + genre.getText() + "','"
+        + runtime.getText() + "','"
+        + director.getText() + "','"
+        + moviestatus.getSelectedItem().toString() + "',"
+        + cinemaId + ","
+        + m_price.getText() + ")";
+
+
+    if (dbc.insertData(insertQuery)) {
+        JOptionPane.showMessageDialog(null, "Movie added successfully!");
+        ManageMovies rA = new ManageMovies();
+        rA.setVisible(true);
+        this.dispose();
+    } else {
+        JOptionPane.showMessageDialog(null, "Error adding movie!");
+    }
 }
-        }
-          
-        
+
+      
     }//GEN-LAST:event_addBTActionPerformed
 
     private void mIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mIDActionPerformed
@@ -294,7 +334,7 @@ if (dbc.insertData("INSERT INTO tbl_movies (title, r_year, genre, run_time, dire
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
 
-        user u = new user();
+        ManageMovies u = new ManageMovies();
         u.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelActionPerformed
@@ -305,7 +345,7 @@ if (dbc.insertData("INSERT INTO tbl_movies (title, r_year, genre, run_time, dire
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
 
-        if(title.getText().isEmpty() || r_year.getText().isEmpty() || genre.getText().isEmpty()
+        if(title.getText().isEmpty() || r_year.getText().isEmpty() || m_price.getText().isEmpty()
             || runtime.getText().isEmpty() || director.getText().isEmpty() )
         {
 
@@ -321,7 +361,8 @@ if (dbc.insertData("INSERT INTO tbl_movies (title, r_year, genre, run_time, dire
                 + "', genre = '" + genre.getText() 
                 + "', run_time = '" + runtime.getText()
                 + "', director = '" + director.getText()
-                +  "', movie_status = '" + moviestatus.getSelectedItem() 
+                +  "', movie_status = '" + moviestatus.getSelectedItem()
+                +  "', m_price = '" + m_price.getText()
                 + "' WHERE m_id = '" + mID.getText() + "'");
 
             ManageMovies u = new ManageMovies();
@@ -361,6 +402,14 @@ if (dbc.insertData("INSERT INTO tbl_movies (title, r_year, genre, run_time, dire
     private void moviestatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moviestatusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_moviestatusActionPerformed
+
+    private void cinemaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cinemaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cinemaMouseClicked
+
+    private void genreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_genreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,6 +455,8 @@ if (dbc.insertData("INSERT INTO tbl_movies (title, r_year, genre, run_time, dire
     public javax.swing.JTextField genre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -413,6 +464,7 @@ if (dbc.insertData("INSERT INTO tbl_movies (title, r_year, genre, run_time, dire
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JTextField mID;
+    public javax.swing.JTextField m_price;
     public javax.swing.JComboBox<String> moviestatus;
     private javax.swing.JPanel panel;
     public javax.swing.JTextField r_year;

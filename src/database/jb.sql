@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2024 at 03:48 PM
+-- Generation Time: Jun 22, 2024 at 03:30 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,7 +39,10 @@ CREATE TABLE `tbl_cinema` (
 --
 
 INSERT INTO `tbl_cinema` (`c_id`, `c_name`, `c_seats`, `c_status`) VALUES
-(2001, 'C1', 50, 'Active');
+(1, 'C1', 50, 'Active'),
+(2, 'C2', 50, 'Active'),
+(3, 'C3', 50, 'Active'),
+(4, 'C4', 50, 'Active');
 
 -- --------------------------------------------------------
 
@@ -79,7 +82,70 @@ INSERT INTO `tbl_logs` (`log_id`, `u_id`, `log_event`, `log_timestamp`, `log_des
 (19, 1007, 'Logged In Successfully', '2024-06-20 20:03:15', 'Admin Login successfully'),
 (20, 1007, 'Logged In Successfully', '2024-06-20 20:05:26', 'Admin Login successfully'),
 (21, 1007, 'Logged In Successfully', '2024-06-20 21:02:17', 'Admin Login successfully'),
-(22, 1007, 'Logged In Successfully', '2024-06-20 21:33:24', 'Admin Login successfully');
+(22, 1007, 'Logged In Successfully', '2024-06-20 21:33:24', 'Admin Login successfully'),
+(23, 1007, 'Logged In Successfully', '2024-06-21 17:05:56', 'Admin Login successfully'),
+(24, 1007, 'Logged In Successfully', '2024-06-21 17:06:27', 'Admin Login successfully'),
+(25, 1006, 'Logged In Successfully', '2024-06-21 17:06:53', 'User Login successfully'),
+(26, 1007, 'Logged In Successfully', '2024-06-21 17:09:36', 'Admin Login successfully'),
+(27, 1007, 'Logged In Successfully', '2024-06-21 17:14:52', 'Admin Login successfully'),
+(28, 1007, 'Logged In Successfully', '2024-06-21 17:35:51', 'Admin Login successfully'),
+(29, 1007, 'Logged In Successfully', '2024-06-21 17:43:21', 'Admin Login successfully'),
+(30, 1007, 'Logged In Successfully', '2024-06-21 17:49:46', 'Admin Login successfully'),
+(31, 1007, 'Logged In Successfully', '2024-06-21 17:50:36', 'Admin Login successfully'),
+(32, 1007, 'Logged In Successfully', '2024-06-21 17:55:25', 'Admin Login successfully'),
+(33, 1007, 'Logged In Successfully', '2024-06-21 18:01:49', 'Admin Login successfully'),
+(34, 1007, 'Logged In Successfully', '2024-06-21 18:04:31', 'Admin Login successfully'),
+(35, 1007, 'Logged In Successfully', '2024-06-21 18:06:26', 'Admin Login successfully'),
+(36, 1007, 'LOGIN_FAILED', '2024-06-21 18:07:17', 'User login attempt failed'),
+(37, 1007, 'LOGIN_FAILED', '2024-06-21 18:07:24', 'User login attempt failed'),
+(38, 1007, 'Logged In Successfully', '2024-06-21 18:07:30', 'Admin Login successfully'),
+(39, 1007, 'Logged In Successfully', '2024-06-21 18:12:09', 'Admin Login successfully'),
+(40, 1006, 'Logged In Successfully', '2024-06-21 18:12:42', 'User Login successfully'),
+(41, 1006, 'Logged In Successfully', '2024-06-21 18:14:55', 'User Login successfully'),
+(42, 1006, 'Logged In Successfully', '2024-06-21 18:18:38', 'User Login successfully'),
+(43, 1007, 'Logged In Successfully', '2024-06-21 18:19:27', 'Admin Login successfully'),
+(44, 1006, 'Logged In Successfully', '2024-06-21 18:21:11', 'User Login successfully'),
+(45, 1007, 'Logged In Successfully', '2024-06-21 18:29:30', 'Admin Login successfully'),
+(46, 1007, 'Logged In Successfully', '2024-06-21 18:30:20', 'Admin Login successfully'),
+(47, 1007, 'Logged In Successfully', '2024-06-21 18:31:38', 'Admin Login successfully'),
+(48, 1007, 'Logged In Successfully', '2024-06-21 18:32:36', 'Admin Login successfully'),
+(49, 1007, 'Logged In Successfully', '2024-06-21 18:34:06', 'Admin Login successfully'),
+(50, 1007, 'Logged In Successfully', '2024-06-21 18:34:25', 'Admin Login successfully'),
+(51, 1007, 'Logged In Successfully', '2024-06-21 18:36:57', 'Admin Login successfully'),
+(52, 1007, 'Logged In Successfully', '2024-06-21 18:39:02', 'Admin Login successfully'),
+(53, 1007, 'Logged In Successfully', '2024-06-21 18:40:03', 'Admin Login successfully'),
+(54, 1007, 'Logged In Successfully', '2024-06-21 18:43:25', 'Admin Login successfully'),
+(55, 1007, 'Logged In Successfully', '2024-06-21 19:10:13', 'Admin Login successfully'),
+(56, 1007, 'Logged In Successfully', '2024-06-21 19:12:27', 'Admin Login successfully'),
+(57, 1007, 'Logged In Successfully', '2024-06-21 19:12:55', 'Admin Login successfully'),
+(58, 1007, 'Logged In Successfully', '2024-06-21 19:15:15', 'Admin Login successfully'),
+(59, 1007, 'Logged In Successfully', '2024-06-21 19:55:39', 'Admin Login successfully'),
+(60, 1007, 'Logged In Successfully', '2024-06-21 19:57:21', 'Admin Login successfully'),
+(61, 1006, 'Logged In Successfully', '2024-06-21 19:57:53', 'User Login successfully'),
+(62, 1006, 'Logged In Successfully', '2024-06-21 20:00:28', 'User Login successfully'),
+(63, 1006, 'Logged In Successfully', '2024-06-21 20:05:29', 'User Login successfully'),
+(64, 1006, 'Logged In Successfully', '2024-06-21 20:08:15', 'User Login successfully'),
+(65, 1006, 'Logged In Successfully', '2024-06-21 20:08:52', 'User Login successfully'),
+(66, 1007, 'Logged In Successfully', '2024-06-21 20:09:35', 'Admin Login successfully'),
+(67, 1006, 'Logged In Successfully', '2024-06-21 20:09:45', 'User Login successfully'),
+(68, 1007, 'Logged In Successfully', '2024-06-21 20:12:32', 'Admin Login successfully'),
+(69, 1007, 'Logged In Successfully', '2024-06-21 20:13:31', 'Admin Login successfully'),
+(70, 1007, 'Logged In Successfully', '2024-06-21 20:15:04', 'Admin Login successfully'),
+(71, 1006, 'Logged In Successfully', '2024-06-21 20:22:16', 'User Login successfully'),
+(72, 1006, 'Logged In Successfully', '2024-06-21 20:25:22', 'User Login successfully'),
+(73, 1006, 'LOGIN_FAILED', '2024-06-21 20:29:20', 'User login attempt failed'),
+(74, 1006, 'Logged In Successfully', '2024-06-21 20:29:28', 'User Login successfully'),
+(75, 1007, 'Logged In Successfully', '2024-06-21 20:31:10', 'Admin Login successfully'),
+(76, 1007, 'Logged In Successfully', '2024-06-21 20:49:54', 'Admin Login successfully'),
+(77, 1006, 'Logged In Successfully', '2024-06-21 20:52:17', 'User Login successfully'),
+(78, 1006, 'Logged In Successfully', '2024-06-21 20:55:01', 'User Login successfully'),
+(79, 1006, 'Logged In Successfully', '2024-06-21 20:55:35', 'User Login successfully'),
+(80, 1007, 'Logged In Successfully', '2024-06-21 21:00:29', 'Admin Login successfully'),
+(81, 1006, 'Logged In Successfully', '2024-06-21 21:01:25', 'User Login successfully'),
+(82, 1006, 'Logged In Successfully', '2024-06-21 21:08:15', 'User Login successfully'),
+(83, 1006, 'Logged In Successfully', '2024-06-21 21:09:05', 'User Login successfully'),
+(84, 1006, 'Logged In Successfully', '2024-06-21 21:51:34', 'User Login successfully'),
+(85, 1006, 'Logged In Successfully', '2024-06-21 21:53:08', 'User Login successfully');
 
 -- --------------------------------------------------------
 
@@ -95,15 +161,45 @@ CREATE TABLE `tbl_movies` (
   `run_time` int(11) NOT NULL,
   `director` varchar(50) NOT NULL,
   `movie_status` varchar(50) NOT NULL,
-  `tbl_cinema` int(20) NOT NULL
+  `c_id` int(10) NOT NULL,
+  `m_price` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_movies`
 --
 
-INSERT INTO `tbl_movies` (`m_id`, `title`, `r_year`, `genre`, `run_time`, `director`, `movie_status`, `tbl_cinema`) VALUES
-(3001, 'doctor strange', 2016, 'action', 160, 'audrey', 'Active', 2001);
+INSERT INTO `tbl_movies` (`m_id`, `title`, `r_year`, `genre`, `run_time`, `director`, `movie_status`, `c_id`, `m_price`) VALUES
+(3001, 'Doctor strange', 2016, 'Action', 160, 'Vince Bacarisas', 'Active', 1, 1200),
+(3002, 'Boys In love', 2024, 'Bromance', 169, 'Christian Abendan', 'Active', 1, 100),
+(3003, 'The Nun', 2017, 'Horror', 150, 'David Villondo', 'Active', 3, 150),
+(3004, 'Haikyuu', 2023, 'Sports', 121, 'John Bert Plameran', 'Active', 4, 500);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_reports`
+--
+
+CREATE TABLE `tbl_reports` (
+  `r_id` int(10) NOT NULL,
+  `sales` int(10) NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_ticket`
+--
+
+CREATE TABLE `tbl_ticket` (
+  `ticket_id` int(10) NOT NULL,
+  `m_id` int(10) NOT NULL,
+  `quantity` int(10) NOT NULL,
+  `timestomp` datetime NOT NULL,
+  `u_id` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -154,7 +250,19 @@ ALTER TABLE `tbl_logs`
 --
 ALTER TABLE `tbl_movies`
   ADD PRIMARY KEY (`m_id`),
-  ADD KEY `fk_cinema` (`tbl_cinema`);
+  ADD KEY `c_id` (`c_id`);
+
+--
+-- Indexes for table `tbl_reports`
+--
+ALTER TABLE `tbl_reports`
+  ADD PRIMARY KEY (`r_id`);
+
+--
+-- Indexes for table `tbl_ticket`
+--
+ALTER TABLE `tbl_ticket`
+  ADD PRIMARY KEY (`ticket_id`);
 
 --
 -- Indexes for table `tbl_u`
@@ -170,19 +278,31 @@ ALTER TABLE `tbl_u`
 -- AUTO_INCREMENT for table `tbl_cinema`
 --
 ALTER TABLE `tbl_cinema`
-  MODIFY `c_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2002;
+  MODIFY `c_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2005;
 
 --
 -- AUTO_INCREMENT for table `tbl_logs`
 --
 ALTER TABLE `tbl_logs`
-  MODIFY `log_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `log_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `tbl_movies`
 --
 ALTER TABLE `tbl_movies`
-  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3002;
+  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3005;
+
+--
+-- AUTO_INCREMENT for table `tbl_reports`
+--
+ALTER TABLE `tbl_reports`
+  MODIFY `r_id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_ticket`
+--
+ALTER TABLE `tbl_ticket`
+  MODIFY `ticket_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_u`
@@ -198,7 +318,7 @@ ALTER TABLE `tbl_u`
 -- Constraints for table `tbl_movies`
 --
 ALTER TABLE `tbl_movies`
-  ADD CONSTRAINT `fk_cinema` FOREIGN KEY (`tbl_cinema`) REFERENCES `tbl_cinema` (`c_id`);
+  ADD CONSTRAINT `tbl_movies_ibfk_1` FOREIGN KEY (`c_id`) REFERENCES `tbl_cinema` (`c_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
